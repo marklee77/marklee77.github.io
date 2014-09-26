@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>e-Enquiry</title>
+  <title>Creating Web Pages With Template Render - e-Enquiry</title>
   <meta name="author" content="Mark Stillwell">
 
   
-  <meta name="description" content="In our department there&rsquo;s a course that includes lab sections on programming
-fluid dynamics simulations in OpenFOAM, which isn&rsquo;t &hellip;">
+  <meta name="description" content="I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
+interpreted (php, ruby) or even most compiled (Java) based &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ fluid dynamics simulations in OpenFOAM, which isn&rsquo;t &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://marklee77.github.io">
+  <link rel="canonical" href="http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="e-Enquiry" type="application/atom+xml">
@@ -76,65 +76,12 @@ fluid dynamics simulations in OpenFOAM, which isn&rsquo;t &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Creating NFS-root VMWare Virtual Machines From the Linux Command Line</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-27T20:24:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:24 pm</span></time>
-        
-           | <a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/#disqus_thread"
-             data-disqus-identifier="http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In our department there&rsquo;s a course that includes lab sections on programming
-fluid dynamics simulations in <a href="http://openfoam.com" title="OpenFOAM: The open source CFD toolbox">OpenFOAM</a>, which isn&rsquo;t supported by the
-University&rsquo;s IT services. We&rsquo;ve traditionally gotten around this by installing
-the required environment in a virtual machine image and running it with
-<a href="http://www.vmware.com" title="VMware">VMWare</a> under MS Windows, but there are infrastructural headaches associated
-with this approach: the image is several gigabytes in size, and so distributing
-to all of the machines and importing it into VMWare manually on a large number
-of machines is time consuming and tedious. The research fellow who runs these
-lab sections asked me to help him come up with a solution to this problem, so my
-suggestion was to create some minimal virtual machine images that users could
-download and import into VMware quickly, and have the root file system shared
-out from a server over NFS. I&rsquo;ve decided to document the process of creating
-these images here, on the off chance it might turn out to be useful to someone
-else. The commands documented below were run on an <a href="http://ubuntu.com" title="Ubuntu Linux">Ubuntu</a> 12.10 system.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/22/creating-web-pages-with-template-render/">Creating Web Pages With Template Render</a></h1>
+      <h1 class="entry-title">Creating Web Pages With Template Render</h1>
     
     
       <p class="meta">
@@ -145,15 +92,15 @@ else. The commands documented below were run on an <a href="http://ubuntu.com" t
 
 <time class='entry-date' datetime='2013-06-22T18:41:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:41 pm</span></time>
         
-           | <a href="/blog/2013/06/22/creating-web-pages-with-template-render/#disqus_thread"
-             data-disqus-identifier="http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
+<div class="entry-content"><p>I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
 interpreted (php, ruby) or even most compiled (Java) based solutions. I&rsquo;m using
 <a href="http://octopress.org/" title="Octopress: A blogging framework for hackers">Octopress</a> to manage this blog currently, it&rsquo;s basically a set of
 customizations, style files, and build scripts that extend the capabilities of
@@ -180,23 +127,123 @@ that came packaged with Ubuntu, but whereas the static website generators did
 more than I wanted, this seemed a little too simple. So, naturally, I decided to
 hack together something on my own.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/22/creating-web-pages-with-template-render/">Read on &rarr;</a>
-    </footer>
-  
+<!--more-->
 
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+<p>In point of fact the mako template library makes it very easy to invoke the
+rendering engine once you give it a few basic configuration parameters, so most
+of the script is just parameter passing. Jinja2 is similarly easy, so I added
+another function and threw it in as well, changing the name of the project from
+mako-render2 to template-render. In the future I plan to add a few more features,
+such as support for Jeckyll-like Yaml front matter, while keeping the focus
+solidly on the task of rendering individual webpages.</p>
+
+<h1>User Manual</h1>
+
+<pre><code>usage: template-render [-h] [-i INPUTFILE] [-e ENGINE] [-d TEMPLATE_DIRS]
+                       [-t TEMPLATE] [-b BLOCK] [-m METAFILE] [-v VAR]
+                       [-o OUTPUTFILE] [-ienc INPUT_ENCODING]
+                       [-oenc OUTPUT_ENCODING]
+
+Render a file using templates.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUTFILE, --inputfile INPUTFILE
+                        input file
+  -e ENGINE, --engine ENGINE
+                        templating engine
+  -d TEMPLATE_DIRS, --template_dirs TEMPLATE_DIRS
+                        : delimited template search path
+  -t TEMPLATE, --template TEMPLATE
+                        template to apply to input file
+  -b BLOCK, --block BLOCK
+                        template block to override
+  -m METAFILE, --metafile METAFILE
+                        metadata file in yaml format
+  -v VAR, --var VAR     name=value pairs to be added to metadata
+  -o OUTPUTFILE, --outputfile OUTPUTFILE
+                        output file
+  -ienc INPUT_ENCODING, --input_encoding INPUT_ENCODING
+                        input encoding
+  -oenc OUTPUT_ENCODING, --output_encoding OUTPUT_ENCODING
+                        output encoding
+</code></pre>
+
+<p>The most important parameter is &ldquo;-t&rdquo;, which is used to tell the script what
+template should be used for rendering. The script also supports inclusion of
+content from either a file or stdin with the &ldquo;-i&rdquo; option (&ldquo;-&rdquo; for stdin), and
+this content is inserted into the block named with &ldquo;-b&rdquo;. The &ldquo;-d&rdquo; option can be
+used to provide a &ldquo;:&rdquo;-delimited search path for template files. By default the
+script assumes mako format templates, but it also supports jinja2 templates
+using the command line option &ldquo;-e jinja2&rdquo;. Support for additional template
+engines may be added in the future.</p>
+
+<p>Templates are given access to a &ldquo;meta&rdquo; python hash that contains values supplied
+by either yaml-format metadata files specified using the &ldquo;-m&rdquo; option or using
+&ldquo;-v&rdquo; name=value pairs. The metadata files are read in the order given on the
+command line, then the name=value pairs are applied, also in command line order.
+So, it is possible to supply a site-wide metadata file and then override values
+for specific pages.</p>
+
+<p>By default the script outputs the rendered document to stdout, but a filename
+can also be given using the &ldquo;-o&rdquo; option. The script reads and writes utf-8 by
+default, but these can be overridden using the &ldquo;-ienc&rdquo; and &ldquo;-oenc&rdquo; options
+respectively.</p>
+
+<p>Now, I just need a few more scripts to create my blog pages and manage the
+build&hellip;</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Mark Stillwell</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-06-22T18:41:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:41 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/" data-via="marklee77" data-counturl="http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/" title="Next Post: Creating NFS-root VMWare Virtual Machines from the Linux Command Line">Creating NFS-root VMWare Virtual Machines from the Linux Command Line &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -259,6 +306,7 @@ hack together something on my own.</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -273,7 +321,10 @@ hack together something on my own.</p>
       var disqus_shortname = 'eenquiry';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/';
+        var disqus_url = 'http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://marklee77.github.io/sitemap.xml 
