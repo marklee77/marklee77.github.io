@@ -1,50 +1,54 @@
---- layout: post title: "Linux Distribution for Recomputable Experiments" date:
-2013-09-12 12:00:00 comments: true categories: --- I had a great time yesterday
-at the <a
-href="http://www.software.ac.uk/workshop-research-software-engineers">Workshop
-for Research Software Engineers</a> put on by the <a
-href="http://www.software.ac.uk">Sustainable Software Institute</a> and hosted
-at the <a href="http://www.oerc.ox.ac.uk/">Oxford e-Research Centre</a>. While
-there, I had an interesting conversation with <a
-href="http://ipg.host.cs.st-andrews.ac.uk/">Ian Gent</a>, writer of "<a
-href="http://recomputation.org/">The Recomputation Manifesto</a>". You
-should head over to the site and read some of Ian's articles,
-particularly <a 
-href="http://www.software.ac.uk/blog/2013-07-09-recomputation-manifesto">this
-one</a>, as he's put quite a lot of thought into the topic. The gist of
-the idea is as follows (apologies Ian for any misunderstandings, you should
-really go to his site after this one): 1) computational experiments are only
-valuable if they can be verified and validated, 2) in theory, it should be
-fairly easy to make computational science experiments, particularly small-scale
-computer science experiments, perfectly repeatable for all time, 3) in practice
-this is never/rarely done and reproduction/verification is really hard, 4) the
-best or possibly only way to accomplish this goal is to make sure that the
-entire environment is reproducible by packaging it in a virtual machine.
+---
+layout: post 
+title: "Linux Distribution for Recomputable Experiments" 
+date: 2013-09-12 12:00:00 
+comments: true 
+categories: 
+--- 
+I had a great time yesterday at the 
+<a href="http://www.software.ac.uk/workshop-research-software-engineers">Workshop for Research Software Engineers</a> 
+put on by the 
+<a href="http://www.software.ac.uk">Sustainable Software Institute</a> and 
+hosted at the <a href="http://www.oerc.ox.ac.uk/">Oxford e-Research Centre</a>. 
+While there, I had an interesting conversation with 
+<a href="http://ipg.host.cs.st-andrews.ac.uk/">Ian Gent</a>, writer of 
+"<a href="http://recomputation.org/">The Recomputation Manifesto</a>". You 
+should head over to the site and read some of Ian's articles, particularly 
+<a href="http://www.software.ac.uk/blog/2013-07-09-recomputation-manifesto">this one</a>, 
+as he's put quite a lot of thought into the topic. The gist of the
+idea is as follows (apologies Ian for any misunderstandings, you should really
+go to his site after this one): 1) computational experiments are only valuable
+if they can be verified and validated, 2) in theory, it should be fairly easy
+to make computational science experiments, particularly small-scale computer
+science experiments, perfectly repeatable for all time, 3) in practice this is
+never/rarely done and reproduction/verification is really hard, 4) the best or
+possibly only way to accomplish this goal is to make sure that the entire
+environment is reproducible by packaging it in a virtual machine.
 
 I have a few thoughts of my own on how we can better accomplish these goals
 after the break. The implementation of these ideas should be fairly simple and
 basically add up to extending or developing a few system utilities and
-systematically archiving distributions and updates on a service like <a
-href="http://figshare.com">figshare</a>, but I believe that the benefits to the
-cause of improving the reproducibility of computational experiments would be
+systematically archiving distributions and updates on a service like 
+<a href="http://figshare.com">figshare</a>, but I believe that the benefits to 
+the cause of improving the reproducibility of computational experiments would be
 enormous.
 
 <!--more-->
 
 
 Ian has spent some time working with <a
-href="http://vagrantup.com">Vagrant</a>, a user friendly front end to <a
-href="http://virtualbox.org">VirtualBox</a> (and now some other hypervisors)
+href="http://vagrantup.com">Vagrant</a>, a user friendly front end to 
+<a href="http://virtualbox.org">VirtualBox</a> (and now some other hypervisors)
 that allows users to create custom virtual machines from a few standard base VM
 images. Vagrant has some really nice features, like tracking all of the
 configuration information in a text file that can be managed through a version
-control system like <a href="http://git-scm.com">git</a>, <a
-href="http://bazaar.canonical.com">bzr</a> or <a
-href="http://darcs.net/">darcs</a>. Vagrant also plays nicely with some of the
-more popular devops configuration management systems (including <a
-href="http://puppetlabs.com">puppet</a>, <a
-href="http://www.opscode.com/chef/">chef</a>, and <a
-href="http://ansibleworks.com">ansible</a>), automatically configures file
+control system like <a href="http://git-scm.com">git</a>, 
+<a href="http://bazaar.canonical.com">bzr</a> or 
+<a href="http://darcs.net/">darcs</a>. Vagrant also plays nicely with some of 
+the more popular devops configuration management systems (including 
+<a href="http://puppetlabs.com">puppet</a>, 
+<a href="http://www.opscode.com/chef/">chef</a>, and 
+<a href="http://ansibleworks.com">ansible</a>), automatically configures file
 synchronization between the working directory on the host an VM, and sets up
 private networking between the host and one or more virtual machines in
 a collection, so it's easy to ssh in and make network connections between
@@ -63,8 +67,8 @@ Vagrant transparently.
 Another problem is that just virtualizing your experiment doesn't necessarily
 make it easier to understand your methodology. You can create a VM blob and
 archive that, even upload it to figshare or a similar service, register it with
-<a href="http://datacite.org">DataCite</a> and give it a <a
-href="http://www.doi.org/">DOI</a>, and that would at least solve the problem
+<a href="http://datacite.org">DataCite</a> and give it a 
+<a href="http://www.doi.org/">DOI</a>, and that would at least solve the problem
 of re-running the same experiment (for reasonably tractable experiments
 anyway), but it would still be hard for others to know exactly what was done to
 prepare the environment (you could have been hacking binaries with a hex editor
@@ -80,15 +84,15 @@ base box, it's perfectly reasonable to want to install some additional system
 software (particularly build tools if you need them to compile source code),
 but "apt-get update" will always get the latest software packages, and using
 updated software could cause your experiment to build or run differently than
-it did before. Neither <a href="http://debian.org">Debian</a> nor <a
-href="http://ubuntu.com">Ubuntu</a> guarantee that every version of every
+it did before. Neither <a href="http://debian.org">Debian</a> nor 
+<a href="http://ubuntu.com">Ubuntu</a> guarantee that every version of every
 software package will always be available, making it necessary to keep your own
 versions in a repository, which adds to complexity and overheads.
 
 My idea is to archive full repository images at certain points in time so that
-they have a DOI (or some other permanently reference-able <a
-href="http://handle.net">handle</a> or <a
-href="https://en.wikipedia.org/wiki/Permalink">permalink</a> if DOIs seem
+they have a DOI (or some other permanently reference-able 
+<a href="http://handle.net">handle</a> or 
+<a href="https://en.wikipedia.org/wiki/Permalink">permalink</a> if DOIs seem
 inappropriate). Weekly or monthly updates could also be generated and given
 their own DOI. These updates would not need to be full mirrors of the
 repository, but could just contain primarily software packages that had been
