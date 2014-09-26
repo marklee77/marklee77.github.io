@@ -1,0 +1,129 @@
+--- layout: post title: "Linux Distribution for Recomputable Experiments" date:
+2013-09-12 12:00:00 comments: true categories: --- I had a great time yesterday
+at the <a
+href="http://www.software.ac.uk/workshop-research-software-engineers">Workshop
+for Research Software Engineers</a> put on by the <a
+href="http://www.software.ac.uk">Sustainable Software Institute</a> and hosted
+at the <a href="http://www.oerc.ox.ac.uk/">Oxford e-Research Centre</a>. While
+there, I had an interesting conversation with <a
+href="http://ipg.host.cs.st-andrews.ac.uk/">Ian Gent</a>, writer of "<a
+href="http://recomputation.org/">The Recomputation Manifesto</a>". You
+should head over to the site and read some of Ian's articles,
+particularly <a 
+href="http://www.software.ac.uk/blog/2013-07-09-recomputation-manifesto">this
+one</a>, as he's put quite a lot of thought into the topic. The gist of
+the idea is as follows (apologies Ian for any misunderstandings, you should
+really go to his site after this one): 1) computational experiments are only
+valuable if they can be verified and validated, 2) in theory, it should be
+fairly easy to make computational science experiments, particularly small-scale
+computer science experiments, perfectly repeatable for all time, 3) in practice
+this is never/rarely done and reproduction/verification is really hard, 4) the
+best or possibly only way to accomplish this goal is to make sure that the
+entire environment is reproducible by packaging it in a virtual machine.
+
+I have a few thoughts of my own on how we can better accomplish these goals
+after the break. The implementation of these ideas should be fairly simple and
+basically add up to extending or developing a few system utilities and
+systematically archiving distributions and updates on a service like <a
+href="http://figshare.com">figshare</a>, but I believe that the benefits to the
+cause of improving the reproducibility of computational experiments would be
+enormous.
+
+<!--more-->
+
+
+Ian has spent some time working with <a
+href="http://vagrantup.com">Vagrant</a>, a user friendly front end to <a
+href="http://virtualbox.org">VirtualBox</a> (and now some other hypervisors)
+that allows users to create custom virtual machines from a few standard base VM
+images. Vagrant has some really nice features, like tracking all of the
+configuration information in a text file that can be managed through a version
+control system like <a href="http://git-scm.com">git</a>, <a
+href="http://bazaar.canonical.com">bzr</a> or <a
+href="http://darcs.net/">darcs</a>. Vagrant also plays nicely with some of the
+more popular devops configuration management systems (including <a
+href="http://puppetlabs.com">puppet</a>, <a
+href="http://www.opscode.com/chef/">chef</a>, and <a
+href="http://ansibleworks.com">ansible</a>), automatically configures file
+synchronization between the working directory on the host an VM, and sets up
+private networking between the host and one or more virtual machines in
+a collection, so it's easy to ssh in and make network connections between
+related machines.
+
+I think that Vagrant is a great step forward in making it easier for
+researchers to work with virtual machines and integrate them into their
+workflows, but there are a few more things that need to be done. For one thing,
+Vagrant is strongly dependent on the VirtualBox "Guest Additons" to
+interact with the hypervisor from the VM. There is some support for different
+providers now, but Vagrant treats each of these as a special case. Really,
+there needs to be some standardization of this interface, so that the same VM
+image can be reliably instantiated on any hypervisor and work with tools like
+Vagrant transparently.
+
+Another problem is that just virtualizing your experiment doesn't necessarily
+make it easier to understand your methodology. You can create a VM blob and
+archive that, even upload it to figshare or a similar service, register it with
+<a href="http://datacite.org">DataCite</a> and give it a <a
+href="http://www.doi.org/">DOI</a>, and that would at least solve the problem
+of re-running the same experiment (for reasonably tractable experiments
+anyway), but it would still be hard for others to know exactly what was done to
+prepare the environment (you could have been hacking binaries with a hex editor
+for all we know). It also suffers from the problem that it requires researchers
+to pass around lots of mutli-gigabyte blobs that contain mostly-redundant data.
+A much better plan is to start from a standard base image and then script in
+all of the configuration and build steps (possibly within your Vagrantfile).
+
+Unfortunately, current operating system distributions haven't been designed
+with the idea of making it easy for researchers to create and archive
+experiment environments in mind. For example, starting from the precise32.box
+base box, it's perfectly reasonable to want to install some additional system
+software (particularly build tools if you need them to compile source code),
+but "apt-get update" will always get the latest software packages, and using
+updated software could cause your experiment to build or run differently than
+it did before. Neither <a href="http://debian.org">Debian</a> nor <a
+href="http://ubuntu.com">Ubuntu</a> guarantee that every version of every
+software package will always be available, making it necessary to keep your own
+versions in a repository, which adds to complexity and overheads.
+
+My idea is to archive full repository images at certain points in time so that
+they have a DOI (or some other permanently reference-able <a
+href="http://handle.net">handle</a> or <a
+href="https://en.wikipedia.org/wiki/Permalink">permalink</a> if DOIs seem
+inappropriate). Weekly or monthly updates could also be generated and given
+their own DOI. These updates would not need to be full mirrors of the
+repository, but could just contain primarily software packages that had been
+changed since the last update. The updated software catalog could refer to
+previous update DOIs or the base repository DOI for packages that hadn&rsquo;t
+changed. In the end, the implementation of this idea would entail some changes
+to the procedures for archiving software, and some extensions to apt-get (or
+yum or yast) to work with DOIs instead of URLs. The payoff would be that users
+of tools like Vagrant would be able to specify a specific version of an
+operating system at a specific moment in time, forever, by simply giving the
+correct DOI in their configuration (Vagrantfile or similar). It could be done
+by interested parties (e.g., academics) independent of the distribution
+providers, but there are questions about who would pay for storage and access,
+and keeping everything reasonably up-to-date, so perhaps it makes the most
+sense to approach the providers and get support there. It really wouldn't add
+very much complexity to their existing processes.
+
+One other idea I have is to extend tools like vagrant to better support
+a paradigm of "builder VMs" and "worker appliances". Basically, setting up an
+experiment might require various specific versions of different tools,
+particularly compilers, linkers, etcetera, that take up quite a lot of space.
+These tools need to be downloaded from a specific version of a repository and
+instantiated within a VM in order to replicate the required build environment,
+but aren't needed to actually run the experiment. Instead of downloading
+everything needed for a fully-interactive operating system complete with
+build-tools onto the experiment-running VM, and then possibly distributing this
+multi-gigabyte image to a cloud back-end, it makes a lot more sense to install
+the build tools on a local-machine VM, and use this local VM to create
+a minimal virtual appliance to actually run the experiment. Ideally, this
+appliance should have only the code and data needed to run the experiment, and
+could even be stripped of things like the standard shell utilities and login
+tools. This would minimize both the size and complexity of the resulting VM
+used to run experiments.
+
+I'm going to try to move forward on implementing some of these ideas over the
+next few months, but I have classes to teach and papers to write, so it might
+take a little while. If anyone wants to help out, or has some suggestions for
+a better approach, then please email me or drop a comment below.
