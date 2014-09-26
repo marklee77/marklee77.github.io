@@ -17,8 +17,8 @@ his research are scheduling algorithms for distributed systems and simulation
 of distributed computing platforms, with a focus on high performance and
 scientific computing. He is also interested in the problems of managing small
 and large scale computational experiments, with the goal of enabling open and
-transparent science. He obtained his B.S. from the University of Florida, USA
-in 1999, M.S. degrees in Mathematics and Computer Science from the University
-of Florida, USA in 2002 and 2003 respectively, and his Ph.D. from the
-University of Hawaii at Manoa, USA in 2010.
+transparent science. He obtained his B.S. from the University of North Florida,
+USA in 1999, M.S. degrees in Mathematics and Computer Science from the
+University of Florida, USA in 2002 and 2003 respectively, and his Ph.D. from
+the University of Hawaii at Manoa, USA in 2010.
 
