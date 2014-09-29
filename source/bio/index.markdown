@@ -9,6 +9,8 @@ footer: true
 
 ![Photo](mark_med.jpg)
 
+[Curriculum Vitae](mark_stillwell_cv.pdf)
+
 Mark Stillwell is a Researcher in the Distributed Software Engineering Group at
 Imperial College London in the United Kingdom, working on the EU-sponsored
 HARNESS project to develop methods for exploiting heterogeneous processing
