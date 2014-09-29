@@ -25,7 +25,7 @@ numbered/dated zip archives. This leads to a "culture of fear" wherein people
 are afraid to try to fix known problems for fear of "making things worse", and
 every roll out of of a new api or set of features becomes a dreaded nightmare.
 
-Overall, the talk was web received. We also discussed the Vagrant workflow, and
+Overall, the talk was well received. We also discussed the Vagrant workflow, and
 how, while Docker can be used to provision containers that function the same
 way as "lightweight" virtual machines, ideally each container should really
 only be running the minimum number of processes, following the single
