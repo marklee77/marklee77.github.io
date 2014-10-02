@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://marklee77.github.io/sitemap.xml 
+Sitemap: http://blog.stillwell.me/sitemap.xml 

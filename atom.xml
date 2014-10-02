@@ -2,14 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[e-Enquiry]]></title>
-  <link href="http://marklee77.github.io/atom.xml" rel="self"/>
-  <link href="http://marklee77.github.io/"/>
-<<<<<<< HEAD
-  <updated>2014-10-02T11:31:58+01:00</updated>
-=======
-  <updated>2014-09-29T21:12:39+01:00</updated>
->>>>>>> 0d7db191c98291a0a8f0791543eac7d3a240f278
-  <id>http://marklee77.github.io/</id>
+  <link href="http://blog.stillwell.me/atom.xml" rel="self"/>
+  <link href="http://blog.stillwell.me/"/>
+  <updated>2014-10-02T11:33:50+01:00</updated>
+  <id>http://blog.stillwell.me/</id>
   <author>
     <name><![CDATA[Mark Stillwell]]></name>
     
@@ -19,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[DevOps, Systems Administration, and the Culture of Fear]]></title>
-    <link href="http://marklee77.github.io/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/"/>
+    <link href="http://blog.stillwell.me/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/"/>
     <updated>2014-09-29T13:09:28+01:00</updated>
-    <id>http://marklee77.github.io/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker</id>
+    <id>http://blog.stillwell.me/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker</id>
     <content type="html"><![CDATA[<p>Today at the <a href="http://www.harness-project.eu">HARNESS project</a> integration team
 meeting I gave a brief
 <a href="http://www.slideshare.net/marklee1977/devops-39666655">presentation</a> wherein I
@@ -31,21 +27,12 @@ and <a href="http://docker.io">Docker</a>.</p>
 
 <p>The central thesis of my talk was that a modern devops approach, based in
 version-controlled configuration management implemented using industry-standard
-<<<<<<< HEAD
 deployment tools and making use of continuous integration and rolling updates
 is a must for creating robust distributed systems with lots of moving parts.
 Interactive configuration of cloud systems and virtual machines leads to
 unreproducible, poorly documented, error-prone &ldquo;brittle&rdquo; systems. It is the
 equivalent of collaborative authoring of documents by emailing word processor
 files, or software version control by having a backup/ directory containing
-=======
-deployments tools and continuous integration and rolling updates is a must for
-creating robust distributed systems with lots of moving parts. Interactive
-configuration of cloud systems and virtual machines leads to unreproducible,
-poorly documented, error-prone &ldquo;brittle&rdquo; systems. It is the equivalent of
-collaborative authoring of documents by emailing word processor files, or
-software version control by having a backup/ directory containing
->>>>>>> 0d7db191c98291a0a8f0791543eac7d3a240f278
 numbered/dated zip archives. This leads to a &ldquo;culture of fear&rdquo; wherein people
 are afraid to try to fix known problems for fear of &ldquo;making things worse&rdquo;, and
 every roll out of of a new api or set of features becomes a dreaded nightmare.</p>
@@ -60,9 +47,9 @@ responsibility principle.</p>
   
   <entry>
     <title type="html"><![CDATA[Linux Distribution for Recomputable Experiments]]></title>
-    <link href="http://marklee77.github.io/blog/2013/09/12/linux-distribution-for-recomputable-experiments/"/>
+    <link href="http://blog.stillwell.me/blog/2013/09/12/linux-distribution-for-recomputable-experiments/"/>
     <updated>2013-09-12T13:00:00+01:00</updated>
-    <id>http://marklee77.github.io/blog/2013/09/12/linux-distribution-for-recomputable-experiments</id>
+    <id>http://blog.stillwell.me/blog/2013/09/12/linux-distribution-for-recomputable-experiments</id>
     <content type="html"><![CDATA[<p>I had a great time yesterday at the
 <a href="http://www.software.ac.uk/workshop-research-software-engineers">Workshop for Research Software Engineers</a>
 put on by the
@@ -194,9 +181,9 @@ a better approach, then please email me or drop a comment below.</p>
   
   <entry>
     <title type="html"><![CDATA[Repetition of Research (Unintended)]]></title>
-    <link href="http://marklee77.github.io/blog/2013/08/03/repetition-of-research/"/>
+    <link href="http://blog.stillwell.me/blog/2013/08/03/repetition-of-research/"/>
     <updated>2013-08-03T16:32:50+01:00</updated>
-    <id>http://marklee77.github.io/blog/2013/08/03/repetition-of-research</id>
+    <id>http://blog.stillwell.me/blog/2013/08/03/repetition-of-research</id>
     <content type="html"><![CDATA[<p>Most of us are familiar with the classical narrative of ongoing scientific
 progress: that each new discovery builds upon previous ones, creating an ever
 upward-rising edifice of human knowledge shaped something like an inverted
@@ -302,9 +289,9 @@ of data in future posts.</p>
   
   <entry>
     <title type="html"><![CDATA[First Steps Exploring the Google Cluster Dataset With iPython]]></title>
-    <link href="http://marklee77.github.io/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/"/>
+    <link href="http://blog.stillwell.me/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/"/>
     <updated>2013-07-15T12:00:00+01:00</updated>
-    <id>http://marklee77.github.io/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython</id>
+    <id>http://blog.stillwell.me/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython</id>
     <content type="html"><![CDATA[<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -5265,9 +5252,9 @@ In&nbsp;[26]:
   
   <entry>
     <title type="html"><![CDATA[Creating NFS-root VMWare Virtual Machines From the Linux Command Line]]></title>
-    <link href="http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/"/>
+    <link href="http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/"/>
     <updated>2013-06-27T20:24:00+01:00</updated>
-    <id>http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line</id>
+    <id>http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line</id>
     <content type="html"><![CDATA[<p>In our department there&rsquo;s a course that includes lab sections on programming
 fluid dynamics simulations in <a href="http://openfoam.com" title="OpenFOAM: The open source CFD toolbox">OpenFOAM</a>, which isn&rsquo;t supported by the
 University&rsquo;s IT services. We&rsquo;ve traditionally gotten around this by installing
@@ -5314,7 +5301,7 @@ $ chroot /path/to/client/root /bin/bash
 </code></pre></li>
 <li><p>It can be difficult to configure the clients to properly deal with read-only
 nfs-mounted root filesystems. One easy way to deal with the
-problem is to use the excellent <a href="http://marklee77.github.io/files/root-ro">root-ro</a> script. Within the chroot:</p>
+problem is to use the excellent <a href="http://blog.stillwell.me/files/root-ro">root-ro</a> script. Within the chroot:</p>
 
 <pre><code> $ cp root-ro /etc/initramfs-tools/scripts/init-bottom/
 </code></pre>
@@ -5477,7 +5464,7 @@ how to create an ovf file for use with vmware.</p>
 
 <p>For this part I first went to easyvmx.com to create a basic virtual machine
 image, and then replaced the provided root disk with my own. Since that site
-seems to be down these days, I&rsquo;m linking to a copy the one I use <a href="http://marklee77.github.io/files/OpenFoam_Client.tar.bz2" title="OpenFOAM NFS-root Client VMX">here</a>.
+seems to be down these days, I&rsquo;m linking to a copy the one I use <a href="http://blog.stillwell.me/files/OpenFoam_Client.tar.bz2" title="OpenFOAM NFS-root Client VMX">here</a>.
 I use the kvm-img utility to convert the disk.img to a format that is compatible
 with VMware and then use <a href="http://communities.vmware.com/community/vmtn/automationtools/ovf" title="OVF Tool">ovftool</a> to bundle the vmx into a compressed ova
 archive. The ovftool utility is available as a download from VMware.</p>
@@ -5504,9 +5491,9 @@ instructions and had problems, please comment on this post.</p>
   
   <entry>
     <title type="html"><![CDATA[Creating Web Pages With Template Render]]></title>
-    <link href="http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/"/>
+    <link href="http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/"/>
     <updated>2013-06-22T18:41:00+01:00</updated>
-    <id>http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render</id>
+    <id>http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render</id>
     <content type="html"><![CDATA[<p>I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
 interpreted (php, ruby) or even most compiled (Java) based solutions. I&rsquo;m using
 <a href="http://octopress.org/" title="Octopress: A blogging framework for hackers">Octopress</a> to manage this blog currently, it&rsquo;s basically a set of

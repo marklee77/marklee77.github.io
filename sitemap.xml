@@ -3,7 +3,7 @@
   
   
   <url>
-    <loc>http://marklee77.github.io/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/</loc>
+    <loc>http://blog.stillwell.me/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/</loc>
     
     <lastmod>2014-09-29T13:09:28+01:00</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/blog/2013/09/12/linux-distribution-for-recomputable-experiments/</loc>
+    <loc>http://blog.stillwell.me/blog/2013/09/12/linux-distribution-for-recomputable-experiments/</loc>
     
     <lastmod>2013-09-12T13:00:00+01:00</lastmod>
     
@@ -19,7 +19,7 @@
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/blog/2013/08/03/repetition-of-research/</loc>
+    <loc>http://blog.stillwell.me/blog/2013/08/03/repetition-of-research/</loc>
     
     <lastmod>2013-08-03T16:32:50+01:00</lastmod>
     
@@ -27,7 +27,7 @@
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/</loc>
+    <loc>http://blog.stillwell.me/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/</loc>
     
     <lastmod>2013-07-15T12:00:00+01:00</lastmod>
     
@@ -35,7 +35,7 @@
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/</loc>
+    <loc>http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/</loc>
     
     <lastmod>2013-06-27T20:24:00+01:00</lastmod>
     
@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/</loc>
+    <loc>http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/</loc>
     
     <lastmod>2013-06-22T18:41:00+01:00</lastmod>
     
@@ -52,52 +52,29 @@
   
   
   <url>
-<<<<<<< HEAD
-    <loc>http://marklee77.github.io/blog/archives/</loc>
-    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
+    <loc>http://blog.stillwell.me/blog/archives/</loc>
+    <lastmod>2014-10-02T11:33:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/</loc>
-    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
+    <loc>http://blog.stillwell.me/</loc>
+    <lastmod>2014-10-02T11:33:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/pubs/</loc>
-    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
-=======
-    <loc>http://marklee77.github.io/</loc>
-    <lastmod>2014-09-29T21:12:39+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>http://marklee77.github.io/pubs/</loc>
-    <lastmod>2014-09-29T21:12:39+01:00</lastmod>
+    <loc>http://blog.stillwell.me/pubs/</loc>
+    <lastmod>2014-10-02T11:33:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://marklee77.github.io/blog/archives/</loc>
-    <lastmod>2014-09-29T21:12:39+01:00</lastmod>
->>>>>>> 0d7db191c98291a0a8f0791543eac7d3a240f278
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://marklee77.github.io/bio/</loc>
-<<<<<<< HEAD
-    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
-=======
-    <lastmod>2014-09-29T21:12:39+01:00</lastmod>
->>>>>>> 0d7db191c98291a0a8f0791543eac7d3a240f278
+    <loc>http://blog.stillwell.me/bio/</loc>
+    <lastmod>2014-10-02T11:33:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -105,12 +82,8 @@
   
   
   <url>
-    <loc>http://marklee77.github.io/pubs/pubs.html</loc>
-<<<<<<< HEAD
+    <loc>http://blog.stillwell.me/pubs/pubs.html</loc>
     <lastmod>2014-10-02T09:55:11Z</lastmod>
-=======
-    <lastmod>2014-07-23T20:26:10Z</lastmod>
->>>>>>> 0d7db191c98291a0a8f0791543eac7d3a240f278
     <priority>0.6</priority>
   </url>
   
