@@ -15,12 +15,12 @@ and [Docker](http://docker.io).
 
 The central thesis of my talk was that a modern devops approach, based in
 version-controlled configuration management implemented using industry-standard
-deployments tools and continuous integration and rolling updates is a must for
-creating robust distributed systems with lots of moving parts. Interactive
-configuration of cloud systems and virtual machines leads to unreproducible,
-poorly documented, error-prone "brittle" systems. It is the equivalent of
-collaborative authoring of documents by emailing word processor files, or
-software version control by having a backup/ directory containing
+deployment tools and making use of continuous integration and rolling updates
+is a must for creating robust distributed systems with lots of moving parts.
+Interactive configuration of cloud systems and virtual machines leads to
+unreproducible, poorly documented, error-prone "brittle" systems. It is the
+equivalent of collaborative authoring of documents by emailing word processor
+files, or software version control by having a backup/ directory containing
 numbered/dated zip archives. This leads to a "culture of fear" wherein people
 are afraid to try to fix known problems for fear of "making things worse", and
 every roll out of of a new api or set of features becomes a dreaded nightmare.
