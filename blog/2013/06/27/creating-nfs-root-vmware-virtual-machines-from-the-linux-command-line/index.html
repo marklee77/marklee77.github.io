@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Creating NFS-root VMWare Virtual Machines From the Linux Command Line - e-Enquiry</title>
+  <meta name="author" content="Mark Stillwell">
+
+  
+  <meta name="description" content="In our department there&rsquo;s a course that includes lab sections on programming
+fluid dynamics simulations in OpenFOAM, which isn&rsquo;t &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="e-Enquiry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42104447-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">e-Enquiry</a></h1>
+  
+    <h2>Computational Engineering, Empirical Computer Science, Distributed Systems</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:marklee77.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/bio">Biography</a></li>
+  <li><a href="/pubs">Publications</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Creating NFS-root VMWare Virtual Machines From the Linux Command Line</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T20:24:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:24 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In our department there&rsquo;s a course that includes lab sections on programming
+fluid dynamics simulations in <a href="http://openfoam.com" title="OpenFOAM: The open source CFD toolbox">OpenFOAM</a>, which isn&rsquo;t supported by the
+University&rsquo;s IT services. We&rsquo;ve traditionally gotten around this by installing
+the required environment in a virtual machine image and running it with
+<a href="http://www.vmware.com" title="VMware">VMWare</a> under MS Windows, but there are infrastructural headaches associated
+with this approach: the image is several gigabytes in size, and so distributing
+to all of the machines and importing it into VMWare manually on a large number
+of machines is time consuming and tedious. The research fellow who runs these
+lab sections asked me to help him come up with a solution to this problem, so my
+suggestion was to create some minimal virtual machine images that users could
+download and import into VMware quickly, and have the root file system shared
+out from a server over NFS. I&rsquo;ve decided to document the process of creating
+these images here, on the off chance it might turn out to be useful to someone
+else. The commands documented below were run on an <a href="http://ubuntu.com" title="Ubuntu Linux">Ubuntu</a> 12.10 system.</p>
+
+<!--more-->
+
+
+<h2>Step 0: Configuring an NFS-root server, and getting appropriate kernel and</h2>
+
+<p>initrd files to install in the VM image.</p>
+
+<p>This part is somewhat beyond the scope of this tutorial. On a working NFS server
+you can use debootstrap to install a system image to a directory that will be
+accessible from clients, preferably with read-only access.</p>
+
+<p>Some mostly Ubuntu/Debian specific notes:</p>
+
+<ol>
+<li><p>Don&rsquo;t forget to edit etc/network/interfaces in the directory that will be
+shared out to the clients if you need to use DHCP to get a DNS server or
+want to have any ability to interact with the interface from the VM. While
+the networking will be pre-setup by the kernel at boot time, none of the
+information will be made available to the operating system without
+re-querying the DHCP server.</p></li>
+<li><p>The best way to get a compatible kernel for the clients is to chroot into
+the root of the filesystem that you want to share, and then use apt-get to
+install the kernel there.</p>
+
+<pre><code>$ mount -t bind /dev /path/to/client/root/dev         
+$ mount -t bind /proc /path/to/client/root/proc
+$ mount -t bind /sys /path/to/client/root/sys
+$ chroot /path/to/client/root /bin/bash
+</code></pre></li>
+<li><p>It can be difficult to configure the clients to properly deal with read-only
+nfs-mounted root filesystems. One easy way to deal with the
+problem is to use the excellent <a href="/files/root-ro">root-ro</a> script. Within the chroot:</p>
+
+<pre><code> $ cp root-ro /etc/initramfs-tools/scripts/init-bottom/
+</code></pre>
+
+<p> Again, you want this in the configuration directory that will be used by the
+ clients, or, more to the point, update-initramfs. When you create the
+ initrd.img by running the update-initramfs command the script will be copied
+ in and run automatically at boot time, before the root filesystem is made
+ available to user-level programs. What it does is quite clever: it moves the
+ NFS-root mount point from / to /mnt/root-ro, creates a temporary (in memory)
+ filesystem at /mnt/root-rw, and then uses overlayfs or aufs to provide the
+ root. The effect is of having a fully read-write enabled root filesystem,
+ but with all of the writes going to the tmpfs. SIDE NOTE: I prefer aufs as
+ it provides the most &ldquo;natural&rdquo; experience, but aufs is apparently on the way
+ out, to be replaced by overlayfs. One problem with this is that the mount
+ options for overlayfs don&rsquo;t allow you to specify that the &ldquo;lower&rdquo; mount is
+ read-only. This results in the odd behavior that if a file already exists on
+ the lower file system, the file can&rsquo;t be edited. The work-around is to copy
+ the file to a new location, &ldquo;delete&rdquo; it (the lower filesystem is
+ unaffected), and then move the copy back to the old location.</p>
+
+<p> Example:</p>
+
+<pre><code> $ cp /etc/passwd /etc/passwd.new
+ $ rm /etc/passwd
+ $ mv /etc/passwd.new /etc/passwd
+</code></pre>
+
+<p> This way when you try to edit the file, overlayfs will know that you are
+ only trying to edit the local copy.</p></li>
+<li><p>Next, edit /etc/initramfs-tools/initramfs.conf <em>within the chroot</em>. Repeat,
+this is to make changes to the initramfs.conf file for the <em>client</em>, and you
+really don&rsquo;t want to make these changes on the server. Change &ldquo;MODULES=most&rdquo;
+to &ldquo;MODULES=netboot&rdquo; and &ldquo;BOOT=local&rdquo; to &ldquo;BOOT=nfs&rdquo;. You may also want to
+change &ldquo;NFSROOT=auto&rdquo; to a hard-coded value, depending on your setup.</p>
+
+<pre><code>$ update-initramfs -k all -c
+</code></pre>
+
+<p>This will cause the needed vmlinuz and initrd.img files to be generated
+under /boot; they may have version information appended to the file names.</p></li>
+</ol>
+
+
+<h2>Step 1: Creating the Disk Image</h2>
+
+<p>The first step in the procedure is to create a properly formatted file that will
+serve as the virtual disk. I used the standard utilities <em>dd</em>, <em>parted</em>, and
+<em>fdisk</em> to create the file, and installed the <a href="http://syslinux.org" title="The Syslinux Project">syslinux</a> bootloader to the
+virtual disk&rsquo;s MBR.</p>
+
+<p>create the empty file:</p>
+
+<pre><code>dd if=/dev/zero of=disk.img bs=1 count=0 seek=1G
+</code></pre>
+
+<p>add the partition table:</p>
+
+<pre><code>parted -s disk.img mklabel msdos
+</code></pre>
+
+<p>create the boot partition:</p>
+
+<pre><code>parted -s --align=none disk.img mkpart primary 0 256M
+</code></pre>
+
+<p>make it bootable:</p>
+
+<pre><code>echo -e "a\n1\nw\nq" | fdisk disk.img
+</code></pre>
+
+<p>add syslinux mbr (syslinux is the boot loader used to boot the kernel):</p>
+
+<pre><code>dd bs=440 conv=notrunc count=1 if=/usr/lib/syslinux/mbr.bin of=disk.img
+</code></pre>
+
+<p>create home partition:</p>
+
+<pre><code>parted -s --align=none disk.img mkpart primary 256M+1 100%
+</code></pre>
+
+<h2>Step 2: Create Filesystems and Install Files</h2>
+
+<p>For this step it&rsquo;s important to have the kernel and initrd files you plan on
+using in one directory, called &ldquo;boot&rdquo; in this example, and a skeleton user home
+directory, called &ldquo;vmuser&rdquo; in this case. You also need to create a fairly basic
+syslinux.cfg file to put in the boot directory:</p>
+
+<pre><code>PROMPT 0
+TIMEOUT 50
+DEFAULT arch
+
+LABEL client
+LINUX ./vmlinuz-linux
+APPEND root=/dev/nfs nfsroot=&lt;server-ip&gt;:&lt;nfs-path&gt; ip=::::::dhcp
+INITRD ./initramfs-linux.img
+</code></pre>
+
+<p>attach loopback device to the disk:</p>
+
+<pre><code>sudo losetup /dev/loop0 disk.img
+</code></pre>
+
+<p>add partitions to /dev:</p>
+
+<pre><code>sudo kpartx -a /dev/loop0
+</code></pre>
+
+<p>create filesystems:</p>
+
+<pre><code>sudo mkfs -t ext4 /dev/mapper/loop0p1
+sudo mkfs -t ext4 /dev/mapper/loop0p2
+</code></pre>
+
+<p>mount filesystems:</p>
+
+<pre><code>sudo mkdir /mnt/vmboot
+sudo mount /dev/mapper/loop0p1 /mnt/vmboot
+sudo mkdir /mnt/vmhome
+sudo mount /dev/mapper/loop0p2 /mnt/vmhome
+</code></pre>
+
+<p>install syslinux in boot directory:</p>
+
+<pre><code>sudo extlinux --install /mnt/vmboot
+</code></pre>
+
+<p>install kernel and config:</p>
+
+<pre><code>sudo cp boot/* /mnt/vmboot
+</code></pre>
+
+<p>install home:</p>
+
+<pre><code>sudo cp -r vmuser /mnt/vmhome/
+</code></pre>
+
+<p>set uid/gid:</p>
+
+<pre><code>sudo chown -R 1000:100 /mnt/vmhome/vmuser
+</code></pre>
+
+<p>clean up after yourself:</p>
+
+<pre><code>sudo umount /mnt/vmboot
+sudo rmdir /mnt/vmboot
+
+sudo umount /mnt/vmhome
+sudo rmdir /mnt/vmhome
+
+sudo kpartx -d /dev/loop0
+
+sudo losetup -d /dev/loop0
+</code></pre>
+
+<p>The disk.img file is now suitable for booting! In the next section we&rsquo;ll tackle
+how to create an ovf file for use with vmware.</p>
+
+<h2>Step 3: Convert the Image to work with VMWare</h2>
+
+<p>For this part I first went to easyvmx.com to create a basic virtual machine
+image, and then replaced the provided root disk with my own. Since that site
+seems to be down these days, I&rsquo;m linking to a copy the one I use <a href="/files/OpenFoam_Client.tar.bz2" title="OpenFOAM NFS-root Client VMX">here</a>.
+I use the kvm-img utility to convert the disk.img to a format that is compatible
+with VMware and then use <a href="http://communities.vmware.com/community/vmtn/automationtools/ovf" title="OVF Tool">ovftool</a> to bundle the vmx into a compressed ova
+archive. The ovftool utility is available as a download from VMware.</p>
+
+<p>convert to vmdk:</p>
+
+<pre><code>kvm-img convert -O vmdk disk.img disk.vmdk
+</code></pre>
+
+<p>add to vmx:</p>
+
+<pre><code>mv disk.vmdk OpenFoam_Client/OpenFoam_Client.vmdk
+</code></pre>
+
+<p>convert to ovf:</p>
+
+<pre><code>ovftool --compress OpenFoam_Client/OpenFoam_Client.vmx boot.ova
+</code></pre>
+
+<p>And that&rsquo;s it! If you think this is useful, or you tried to follow my
+instructions and had problems, please comment on this post.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Mark Stillwell</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T20:24:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:24 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/" data-via="marklee77" data-counturl="http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/22/creating-web-pages-with-template-render/" title="Previous Post: Creating Web Pages with Template Render">&laquo; Creating Web Pages with Template Render</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/" title="Next Post: First Steps Exploring the Google Cluster dataset with iPython">First Steps Exploring the Google Cluster dataset with iPython &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/">DevOps, Systems Administration, and the Culture of Fear</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/12/linux-distribution-for-recomputable-experiments/">Linux Distribution for Recomputable Experiments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/03/repetition-of-research/">Repetition of Research (Unintended)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/">First Steps Exploring the Google Cluster Dataset With iPython</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Creating NFS-root VMWare Virtual Machines From the Linux Command Line</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/marklee77">@marklee77</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'marklee77',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/104319202817742443023?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Mark Stillwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'eenquiry';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/';
+        var disqus_url = 'http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

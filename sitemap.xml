@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/</loc>
+    
+    <lastmod>2014-09-29T13:09:28+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/2013/09/12/linux-distribution-for-recomputable-experiments/</loc>
+    
+    <lastmod>2013-09-12T13:00:00+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/2013/08/03/repetition-of-research/</loc>
+    
+    <lastmod>2013-08-03T16:32:50+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/</loc>
+    
+    <lastmod>2013-07-15T12:00:00+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/</loc>
+    
+    <lastmod>2013-06-27T20:24:00+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/</loc>
+    
+    <lastmod>2013-06-22T18:41:00+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://marklee77.github.io/blog/archives/</loc>
+    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/</loc>
+    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/pubs/</loc>
+    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://marklee77.github.io/bio/</loc>
+    <lastmod>2014-10-02T11:31:58+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://marklee77.github.io/pubs/pubs.html</loc>
+    <lastmod>2014-10-02T09:55:11Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

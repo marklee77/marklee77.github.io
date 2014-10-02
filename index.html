@@ -1,1 +1,560 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>e-Enquiry</title>
+  <meta name="author" content="Mark Stillwell">
+
+  
+  <meta name="description" content="Today at the HARNESS project integration team
+meeting I gave a brief
+presentation wherein I
+discussed DevOps and some of my favorite
+tools, namely &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://marklee77.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="e-Enquiry" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42104447-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">e-Enquiry</a></h1>
+  
+    <h2>Computational Engineering, Empirical Computer Science, Distributed Systems</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:marklee77.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/bio">Biography</a></li>
+  <li><a href="/pubs">Publications</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/">DevOps, Systems Administration, and the Culture of Fear</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-29T13:09:28+01:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>1:09 pm</span></time>
+        
+           | <a href="/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today at the <a href="http://www.harness-project.eu">HARNESS project</a> integration team
+meeting I gave a brief
+<a href="http://www.slideshare.net/marklee1977/devops-39666655">presentation</a> wherein I
+discussed <a href="http://en.wikipedia.org/wiki/DevOps">DevOps</a> and some of my favorite
+tools, namely <a href="http://ansible.com">Ansible</a>, <a href="http://vagrantup.com">Vagrant</a>,
+and <a href="http://docker.io">Docker</a>.</p>
+
+<p>The central thesis of my talk was that a modern devops approach, based in
+version-controlled configuration management implemented using industry-standard
+deployment tools and making use of continuous integration and rolling updates
+is a must for creating robust distributed systems with lots of moving parts.
+Interactive configuration of cloud systems and virtual machines leads to
+unreproducible, poorly documented, error-prone &ldquo;brittle&rdquo; systems. It is the
+equivalent of collaborative authoring of documents by emailing word processor
+files, or software version control by having a backup/ directory containing
+numbered/dated zip archives. This leads to a &ldquo;culture of fear&rdquo; wherein people
+are afraid to try to fix known problems for fear of &ldquo;making things worse&rdquo;, and
+every roll out of of a new api or set of features becomes a dreaded nightmare.</p>
+
+<p>Overall, the talk was well received. We also discussed the Vagrant workflow, and
+how, while Docker can be used to provision containers that function the same
+way as &ldquo;lightweight&rdquo; virtual machines, ideally each container should really
+only be running the minimum number of processes, following the single
+responsibility principle.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/12/linux-distribution-for-recomputable-experiments/">Linux Distribution for Recomputable Experiments</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-09-12T13:00:00+01:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:00 pm</span></time>
+        
+           | <a href="/blog/2013/09/12/linux-distribution-for-recomputable-experiments/#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io/blog/2013/09/12/linux-distribution-for-recomputable-experiments/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I had a great time yesterday at the
+<a href="http://www.software.ac.uk/workshop-research-software-engineers">Workshop for Research Software Engineers</a>
+put on by the
+<a href="http://www.software.ac.uk">Sustainable Software Institute</a> and
+hosted at the <a href="http://www.oerc.ox.ac.uk/">Oxford e-Research Centre</a>.
+While there, I had an interesting conversation with
+<a href="http://ipg.host.cs.st-andrews.ac.uk/">Ian Gent</a>, writer of
+&ldquo;<a href="http://recomputation.org/">The Recomputation Manifesto</a>&rdquo;. You
+should head over to the site and read some of Ian&rsquo;s articles, particularly
+<a href="http://www.software.ac.uk/blog/2013-07-09-recomputation-manifesto">this one</a>,
+as he&rsquo;s put quite a lot of thought into the topic. The gist of the
+idea is as follows (apologies Ian for any misunderstandings, you should really
+go to his site after this one): 1) computational experiments are only valuable
+if they can be verified and validated, 2) in theory, it should be fairly easy
+to make computational science experiments, particularly small-scale computer
+science experiments, perfectly repeatable for all time, 3) in practice this is
+never/rarely done and reproduction/verification is really hard, 4) the best or
+possibly only way to accomplish this goal is to make sure that the entire
+environment is reproducible by packaging it in a virtual machine.</p>
+
+<p>I have a few thoughts of my own on how we can better accomplish these goals
+after the break. The implementation of these ideas should be fairly simple and
+basically add up to extending or developing a few system utilities and
+systematically archiving distributions and updates on a service like
+<a href="http://figshare.com">figshare</a>, but I believe that the benefits to
+the cause of improving the reproducibility of computational experiments would be
+enormous.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/09/12/linux-distribution-for-recomputable-experiments/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/03/repetition-of-research/">Repetition of Research (Unintended)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-08-03T16:32:50+01:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2013</span></span> <span class='time'>4:32 pm</span></time>
+        
+           | <a href="/blog/2013/08/03/repetition-of-research/#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io/blog/2013/08/03/repetition-of-research/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Most of us are familiar with the classical narrative of ongoing scientific
+progress: that each new discovery builds upon previous ones, creating an ever
+upward-rising edifice of human knowledge shaped something like an inverted
+pyramid. There&rsquo;s also an idea that, in the semi-distant past of a few hundred
+years ago one person could know all the scientific knowledge of his (or her)
+time, but today the vast and ever-expanding amount of information available
+means that scientists must be much more specialized, and that as time passes
+they will become ever more specialized.</p>
+
+<p>There is some truth to these ideas, but there are problems as well: when knew
+knowledge is created, how is it added to the edifice? How do we make sure that
+future scholars will know about it and properly reference it in their own works?
+If a scientist must be incredibly specialized to advance knowledge, then what
+does he (or she) do when just starting out? How does one choose a field of
+research? And what happens when the funding for research into that area dries
+up? Contrary to what we learned in grade school, a scientist cannot choose to
+simply study, say, some obscure species of Peruvian moth and spend the next 40
+years of summers in South America learning everything there is to know about it
+without also spending some time justifying that decision to colleagues and
+funding bodies.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/03/repetition-of-research/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/">First Steps Exploring the Google Cluster Dataset With iPython</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-07-15T12:00:00+01:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:00 pm</span></time>
+        
+           | <a href="/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A lot of my research is based around developing and testing heuristic algorithms for various computation problems, in particular, I try to develop and adapt vector-packing based heuristics for scheduling virtual machines in distributed heterogeneous environments.</p>
+<p>Toward this end, I&#8217;ve spent a fair amount of time investigating the large data trace released by google in 2011. The trace is available through Google Cloud Storage, and can be downloaded using the gsutil utility, which can be installed in a python virtual environment via pypi/pip. I want to be able to use this trace to generate synthetic problem instances to use to test my heuristics.</p>
+<p>If you spot any mistakes or errors in my code then please leave a comment or email me.</p>
+</div>
+</div>
+</div>
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Creating NFS-root VMWare Virtual Machines From the Linux Command Line</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-27T20:24:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:24 pm</span></time>
+        
+           | <a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In our department there&rsquo;s a course that includes lab sections on programming
+fluid dynamics simulations in <a href="http://openfoam.com" title="OpenFOAM: The open source CFD toolbox">OpenFOAM</a>, which isn&rsquo;t supported by the
+University&rsquo;s IT services. We&rsquo;ve traditionally gotten around this by installing
+the required environment in a virtual machine image and running it with
+<a href="http://www.vmware.com" title="VMware">VMWare</a> under MS Windows, but there are infrastructural headaches associated
+with this approach: the image is several gigabytes in size, and so distributing
+to all of the machines and importing it into VMWare manually on a large number
+of machines is time consuming and tedious. The research fellow who runs these
+lab sections asked me to help him come up with a solution to this problem, so my
+suggestion was to create some minimal virtual machine images that users could
+download and import into VMware quickly, and have the root file system shared
+out from a server over NFS. I&rsquo;ve decided to document the process of creating
+these images here, on the off chance it might turn out to be useful to someone
+else. The commands documented below were run on an <a href="http://ubuntu.com" title="Ubuntu Linux">Ubuntu</a> 12.10 system.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/22/creating-web-pages-with-template-render/">Creating Web Pages With Template Render</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-22T18:41:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:41 pm</span></time>
+        
+           | <a href="/blog/2013/06/22/creating-web-pages-with-template-render/#disqus_thread"
+             data-disqus-identifier="http://marklee77.github.io/blog/2013/06/22/creating-web-pages-with-template-render/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
+interpreted (php, ruby) or even most compiled (Java) based solutions. I&rsquo;m using
+<a href="http://octopress.org/" title="Octopress: A blogging framework for hackers">Octopress</a> to manage this blog currently, it&rsquo;s basically a set of
+customizations, style files, and build scripts that extend the capabilities of
+<a href="http://jeckyllrb.com/" title="Jeckyll">Jeckyll</a>, a comprehensive platform in its own right. I&rsquo;ve also tried out the
+node.js based <a href="http://docpad.org/" title="Docpad">Docpad</a> and the pythonic <a href="http://hyde.github.com/" title="Hyde: A static website generator">Hyde</a> and <a href="http://blog.getpelican.com/" title="Pelican Development Blog">Pelican</a>.</p>
+
+<p>While these all do a fairly good job of managing a standard blogging sites, in
+my opinion they all suffer from trying to do a bit too much, to manage the whole
+job of website creation, which makes it difficult to decouple small, specific
+bits of functionality, like rendering just a few web pages from templates. Also,
+I never really got into the <a href="http://jinja.pocoo.org/" title="Jinja2">Jinja2</a> templating language: I don&rsquo;t like the
+way that it (doesn&rsquo;t) handle inline code, or the fact that every call to a macro
+has to be in the form of a <em>block</em>, or that every macro definition needs to do
+something with the content included in the block, even if you didn&rsquo;t want to use
+that feature. I much prefer the style of <a href="http://www.makotemplates.org/" title="Mako Templates for Python">Mako</a>, but none of the popular
+static website generators seem to support it.</p>
+
+<p>For the Department&rsquo;s digital sign project, I just needed something that would
+rending a single, but fairly complicated, web page in a way that would be easy
+for me to customize, and I didn&rsquo;t want to deal with the overhead of a lot of
+features aimed at things like blogging that I never intended to use. My first
+thought was to hack something together with <em>Make</em> and the mako-render script
+that came packaged with Ubuntu, but whereas the static website generators did
+more than I wanted, this seemed a little too simple. So, naturally, I decided to
+hack together something on my own.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/22/creating-web-pages-with-template-render/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/">DevOps, Systems Administration, and the Culture of Fear</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/12/linux-distribution-for-recomputable-experiments/">Linux Distribution for Recomputable Experiments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/03/repetition-of-research/">Repetition of Research (Unintended)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/">First Steps Exploring the Google Cluster Dataset With iPython</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Creating NFS-root VMWare Virtual Machines From the Linux Command Line</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/marklee77">@marklee77</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'marklee77',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/104319202817742443023?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Mark Stillwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'eenquiry';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
