@@ -5,12 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Creating Web Pages With Template Render - e-Enquiry</title>
+  <title>Research Software and Academic Citizenship - e-Enquiry</title>
   <meta name="author" content="Mark Stillwell">
 
   
-  <meta name="description" content="I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
-interpreted (php, ruby) or even most compiled (Java) based &hellip;">
+  <meta name="description" content="The authors of a recent article featured in Times Higher Education, &ldquo;Is
+&lsquo;academic citizenship&rsquo; under
+strain?&rdquo;,
+argue &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +21,7 @@ interpreted (php, ruby) or even most compiled (Java) based &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render">
+  <link rel="canonical" href="http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="e-Enquiry" type="application/atom+xml">
@@ -83,7 +85,7 @@ interpreted (php, ruby) or even most compiled (Java) based &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Creating Web Pages With Template Render</h1>
+      <h1 class="entry-title">Research Software and Academic Citizenship</h1>
     
     
       <p class="meta">
@@ -92,7 +94,7 @@ interpreted (php, ruby) or even most compiled (Java) based &hellip;">
 
 
 
-<time class='entry-date' datetime='2013-06-22T18:41:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:41 pm</span></time>
+<time class='entry-date' datetime='2015-02-05T16:44:11+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:44 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://blog.stillwell.me">Comments</a>
@@ -102,99 +104,22 @@ interpreted (php, ruby) or even most compiled (Java) based &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
-interpreted (php, ruby) or even most compiled (Java) based solutions. I&rsquo;m using
-<a href="http://octopress.org/" title="Octopress: A blogging framework for hackers">Octopress</a> to manage this blog currently, it&rsquo;s basically a set of
-customizations, style files, and build scripts that extend the capabilities of
-<a href="http://jeckyllrb.com/" title="Jeckyll">Jeckyll</a>, a comprehensive platform in its own right. I&rsquo;ve also tried out the
-node.js based <a href="http://docpad.org/" title="Docpad">Docpad</a> and the pythonic <a href="http://hyde.github.com/" title="Hyde: A static website generator">Hyde</a> and <a href="http://blog.getpelican.com/" title="Pelican Development Blog">Pelican</a>.</p>
+<div class="entry-content"><p>The authors of a recent article featured in <em>Times Higher Education</em>, <a href="http://www.timeshighereducation.co.uk/features/is-academic-citizenship-under-strain/2018134.article">&ldquo;Is
+&lsquo;academic citizenship&rsquo; under
+strain?&rdquo;</a>,
+argue persuasively that changes in policy and the funding environment are
+pushing academics to focus more and more on the primary tasks of teaching and
+research, at the expense of a large class of less widely known activities that
+are nonetheless essential to the academic enterprise. The points they make will
+resonate with any academic who has tried to find the time to make significant
+real-world contributions in today&rsquo;s metric-focused environment. However,
+despite its aspirations, the article is not truly comprehensive: One critical
+area of activity neglected in the piece is that of developing and maintaining
+the software and infrastructures that enable modern computing-based research.</p>
 
-<p>While these all do a fairly good job of managing a standard blogging sites, in
-my opinion they all suffer from trying to do a bit too much, to manage the whole
-job of website creation, which makes it difficult to decouple small, specific
-bits of functionality, like rendering just a few web pages from templates. Also,
-I never really got into the <a href="http://jinja.pocoo.org/" title="Jinja2">Jinja2</a> templating language: I don&rsquo;t like the
-way that it (doesn&rsquo;t) handle inline code, or the fact that every call to a macro
-has to be in the form of a <em>block</em>, or that every macro definition needs to do
-something with the content included in the block, even if you didn&rsquo;t want to use
-that feature. I much prefer the style of <a href="http://www.makotemplates.org/" title="Mako Templates for Python">Mako</a>, but none of the popular
-static website generators seem to support it.</p>
+<p><a href="http://www.rse.ac.uk/">UKRS</a></p>
 
-<p>For the Department&rsquo;s digital sign project, I just needed something that would
-rending a single, but fairly complicated, web page in a way that would be easy
-for me to customize, and I didn&rsquo;t want to deal with the overhead of a lot of
-features aimed at things like blogging that I never intended to use. My first
-thought was to hack something together with <em>Make</em> and the mako-render script
-that came packaged with Ubuntu, but whereas the static website generators did
-more than I wanted, this seemed a little too simple. So, naturally, I decided to
-hack together something on my own.</p>
-
-<!--more-->
-
-
-<p>In point of fact the mako template library makes it very easy to invoke the
-rendering engine once you give it a few basic configuration parameters, so most
-of the script is just parameter passing. Jinja2 is similarly easy, so I added
-another function and threw it in as well, changing the name of the project from
-mako-render2 to template-render. In the future I plan to add a few more features,
-such as support for Jeckyll-like Yaml front matter, while keeping the focus
-solidly on the task of rendering individual webpages.</p>
-
-<h1>User Manual</h1>
-
-<pre><code>usage: template-render [-h] [-i INPUTFILE] [-e ENGINE] [-d TEMPLATE_DIRS]
-                       [-t TEMPLATE] [-b BLOCK] [-m METAFILE] [-v VAR]
-                       [-o OUTPUTFILE] [-ienc INPUT_ENCODING]
-                       [-oenc OUTPUT_ENCODING]
-
-Render a file using templates.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i INPUTFILE, --inputfile INPUTFILE
-                        input file
-  -e ENGINE, --engine ENGINE
-                        templating engine
-  -d TEMPLATE_DIRS, --template_dirs TEMPLATE_DIRS
-                        : delimited template search path
-  -t TEMPLATE, --template TEMPLATE
-                        template to apply to input file
-  -b BLOCK, --block BLOCK
-                        template block to override
-  -m METAFILE, --metafile METAFILE
-                        metadata file in yaml format
-  -v VAR, --var VAR     name=value pairs to be added to metadata
-  -o OUTPUTFILE, --outputfile OUTPUTFILE
-                        output file
-  -ienc INPUT_ENCODING, --input_encoding INPUT_ENCODING
-                        input encoding
-  -oenc OUTPUT_ENCODING, --output_encoding OUTPUT_ENCODING
-                        output encoding
-</code></pre>
-
-<p>The most important parameter is &ldquo;-t&rdquo;, which is used to tell the script what
-template should be used for rendering. The script also supports inclusion of
-content from either a file or stdin with the &ldquo;-i&rdquo; option (&ldquo;-&rdquo; for stdin), and
-this content is inserted into the block named with &ldquo;-b&rdquo;. The &ldquo;-d&rdquo; option can be
-used to provide a &ldquo;:&rdquo;-delimited search path for template files. By default the
-script assumes mako format templates, but it also supports jinja2 templates
-using the command line option &ldquo;-e jinja2&rdquo;. Support for additional template
-engines may be added in the future.</p>
-
-<p>Templates are given access to a &ldquo;meta&rdquo; python hash that contains values supplied
-by either yaml-format metadata files specified using the &ldquo;-m&rdquo; option or using
-&ldquo;-v&rdquo; name=value pairs. The metadata files are read in the order given on the
-command line, then the name=value pairs are applied, also in command line order.
-So, it is possible to supply a site-wide metadata file and then override values
-for specific pages.</p>
-
-<p>By default the script outputs the rendered document to stdout, but a filename
-can also be given using the &ldquo;-o&rdquo; option. The script reads and writes utf-8 by
-default, but these can be overridden using the &ldquo;-ienc&rdquo; and &ldquo;-oenc&rdquo; options
-respectively.</p>
-
-<p>Now, I just need a few more scripts to create my blog pages and manage the
-build&hellip;</p>
+<p><a href="http://software.ac.uk">Software Sustainability Institute</a></p>
 </div>
 
 
@@ -210,7 +135,7 @@ build&hellip;</p>
 
 
 
-<time class='entry-date' datetime='2013-06-22T18:41:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:41 pm</span></time>
+<time class='entry-date' datetime='2015-02-05T16:44:11+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:44 pm</span></time>
       
 
 
@@ -218,7 +143,7 @@ build&hellip;</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/" data-via="marklee77" data-counturl="http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/" data-via="marklee77" data-counturl="http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -231,8 +156,8 @@ build&hellip;</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2014/10/05/ansible-deployment-of-ansible-provisioned-docker-containers/" title="Previous Post: Ansible deployment of Ansible-provisioned Docker containers">&laquo; Ansible deployment of Ansible-provisioned Docker containers</a>
       
-        <a class="basic-alignment right" href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/" title="Next Post: Creating NFS-root VMWare Virtual Machines from the Linux Command Line">Creating NFS-root VMWare Virtual Machines from the Linux Command Line &raquo;</a>
       
     </p>
   </footer>
@@ -336,8 +261,8 @@ build&hellip;</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/';
-        var disqus_url = 'http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/';
+        var disqus_identifier = 'http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/';
+        var disqus_url = 'http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/';
         var disqus_script = 'embed.js';
       
     (function () {
