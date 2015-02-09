@@ -14,7 +14,7 @@ time, but today the vast and ever-expanding amount of information available
 means that scientists must be much more specialized, and that as time passes
 they will become ever more specialized.
 
-There is some truth to these ideas, but there are problems as well: when knew
+There is some truth to these ideas, but there are problems as well: when new
 knowledge is created, how is it added to the edifice? How do we make sure that
 future scholars will know about it and properly reference it in their own works?
 If a scientist must be incredibly specialized to advance knowledge, then what
@@ -28,13 +28,12 @@ funding bodies.
 
 <!--more-->
 
-The answer to the first question is: no one, and everyone, and it isn't done
-perfectly. New scientific knowledge is published, generally in refereed
-conference proceedings and/or journals, but sometimes also online in the form of
-research reports or blog posts. The good thing about refereed publications is
-that they have been read by the author's (or authors') peers, who have rendered
-a judgment that the work is of sufficient quality and novelty to merit adding it
-to the official scientific literature. The bad thing is that this process is
+New scientific knowledge is published, generally in refereed conference
+proceedings and/or journals, but sometimes also online in the form of research
+reports or blog posts. The good thing about refereed publications is that they
+have been read by the author's (or authors') peers, who have rendered
+a judgment that the work is of sufficient quality and novelty to merit adding
+it to the official scientific literature. The bad thing is that this process is
 slow and prone to errors--referees are human beings, and they work on
 a voluntary basis, and they may only be partial experts on the topic of the
 article in question. The fact of the matter is that it is extremely likely that
