@@ -16,6 +16,6 @@ despite its aspirations, the article is not truly comprehensive: One critical
 area of activity neglected in the piece is that of developing and maintaining
 the software and infrastructures that enable modern computing-based research.
 
-[UKRS](http://www.rse.ac.uk/)
+[UKRSE](http://www.rse.ac.uk/)
 
 [Software Sustainability Institute](http://software.ac.uk)
