@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://blog.stillwell.me/blog/2015/04/29/research-in-the-cloud-software-carpentry-event-near-london/</loc>
+    
+    <lastmod>2015-04-29T11:19:35+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/</loc>
     
     <lastmod>2015-02-05T16:44:11+00:00</lastmod>
@@ -69,28 +77,28 @@
   
   <url>
     <loc>http://blog.stillwell.me/blog/archives/</loc>
-    <lastmod>2015-02-09T15:44:52+00:00</lastmod>
+    <lastmod>2015-04-29T11:42:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.stillwell.me/</loc>
-    <lastmod>2015-02-09T15:44:52+00:00</lastmod>
+    <lastmod>2015-04-29T11:42:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://blog.stillwell.me/pubs/</loc>
-    <lastmod>2015-02-09T15:44:52+00:00</lastmod>
+    <lastmod>2015-04-29T11:42:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.stillwell.me/bio/</loc>
-    <lastmod>2015-02-09T15:44:52+00:00</lastmod>
+    <lastmod>2015-04-29T11:42:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
