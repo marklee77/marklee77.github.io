@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cloud | e-Enquiry]]></title>
   <link href="http://blog.stillwell.me/blog/categories/cloud/atom.xml" rel="self"/>
   <link href="http://blog.stillwell.me/"/>
-  <updated>2015-04-29T11:42:11+01:00</updated>
+  <updated>2015-04-29T12:51:03+01:00</updated>
   <id>http://blog.stillwell.me/</id>
   <author>
     <name><![CDATA[Mark Stillwell]]></name>
@@ -19,8 +19,9 @@
     <updated>2015-04-29T11:19:35+01:00</updated>
     <id>http://blog.stillwell.me/blog/2015/04/29/research-in-the-cloud-software-carpentry-event-near-london</id>
     <content type="html"><![CDATA[<p>I&rsquo;m very excited to announce that for the past month I have been working on the
-arrangements for a cloud-oriented <a href="http://software-carpentry.org">software carpentry</a>
-event, and we are now ready to start recruiting for participants! The
+arrangements for a cloud-oriented
+<a href="http://software-carpentry.org">software carpentry</a> event, and we are now ready
+to start recruiting for participants! The
 <a href="https://harnesscloud.github.io/2015-07-15-feltham/">event</a>, which is going to
 be held at the SAP offices in Feltham (near London Heathrow) July 15-17, is
 being organized as a dissemination activity for the European FP7
@@ -28,14 +29,20 @@ being organized as a dissemination activity for the European FP7
 the standard software carpentry curriculum of task automation, modular
 programming, and version control, with additional modules on cloud computing,
 including deployment, configuration, and management of virtual machines.
-Participants will also learn about programming data-flow engines from Maxeler
-and how to access the public <a href="http://www.egi.eu/infrastructure/cloud/">EGI Federated Cloud</a>
-infrastructure for research. There will be a keynote on the HARNESS project and
-how it is helping to bring the power of heterogeneous accelerators to the cloud.</p>
+End-user-ready cloud computing software projects supported by the project will
+be covered, particularly the <a href="http://www.conpaas.eu/">ConPaaS</a> runtime
+environment and the <a href="http://www.xtreemfs.org/">XtreemFS</a> distributed filesystem.
+Participants will also learn about programming
+<a href="https://www.maxeler.com/technology/dataflow-computing/">Dataflow</a> engines from
+Maxeler and how to access the public
+<a href="http://www.egi.eu/infrastructure/cloud/">EGI Federated Cloud</a> infrastructure
+for research. There will be a keynote on the HARNESS project and how it is
+helping to bring the power of heterogeneous accelerators to the cloud.</p>
 
 <p>In addition to the project partners, there will be representatives from
-<a href="http://egi.eu">EGI</a> and the <a href="http://www.softare.ac.uk">Software Sustainability Insitute (SSI)</a>
-present to teach some of the modules and provide additional support.</p>
+<a href="http://egi.eu">EGI</a> and the
+<a href="http://www.softare.ac.uk">Software Sustainability Insitute (SSI)</a> present to
+teach some of the modules and provide additional support.</p>
 
 <p>Participation is free, but only 40 places are available, so sign up now!</p>
 
