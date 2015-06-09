@@ -28,6 +28,9 @@ for unused environments.
 In general, it is better to use environment-specific variables with the same
 task list for different environments, this reduces the maintenance overhead,
 allows for parallel deployment, and reduces the size of the output.
+
+<!--more-->
+
 Environment-specific variables can be loaded by using "include_vars" and
 "with_first_found" as in the following preamble:
 
