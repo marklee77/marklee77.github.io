@@ -9,9 +9,8 @@
   <meta name="author" content="Mark Stillwell">
 
   
-  <meta name="description" content="I&rsquo;m very excited to announce that for the past month I have been working on the
-arrangements for a cloud-oriented
-software carpentry event, and &hellip;">
+  <meta name="description" content="Lately I&rsquo;ve been tinkering with some of my Ansible roles to improve the support
+for multiple-environment deployments. Previously, I&rsquo;d &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +80,69 @@ software carpentry event, and &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/09/multi-environment-deployments-with-ansible/">Ansible Multi-OS Playbooks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-09T13:26:28+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:26 pm</span></time>
+        
+           | <a href="/blog/2015/06/09/multi-environment-deployments-with-ansible/#disqus_thread"
+             data-disqus-identifier="http://blog.stillwell.me/blog/2015/06/09/multi-environment-deployments-with-ansible/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Lately I&rsquo;ve been tinkering with some of my Ansible roles to improve the support
+for multiple-environment deployments. Previously, I&rsquo;d been using a somewhat
+naive approach of simply including environment-specific task lists using
+conditionals in tasks/main.yml like so:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">include</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ubuntu-install.yml</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">when</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ansible_distribution == &quot;Ubuntu&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">include</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">centos-install.yml</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">when</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ansible_distribution == &quot;CentOS&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>However there are a number of problems with this approach: 1) it requires
+keeping and maintaining separate task lists for each environment, 2)
+deployments to different environments are done sequentially rather than in
+parallel, and 3) it pollutes the output from ansible with lots of skipped tasks
+for unused environments.</p>
+
+<p>In general, it is better to use environment-specific variables with the same
+task list for different environments, this reduces the maintenance overhead,
+allows for parallel deployment, and reduces the size of the output.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/06/09/multi-environment-deployments-with-ansible/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -596,6 +658,10 @@ hack together something on my own.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/09/multi-environment-deployments-with-ansible/">Ansible Multi-OS Playbooks</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/04/29/research-in-the-cloud-software-carpentry-event-near-london/">&#8216;Research in the Cloud&#8217; Software Carpentry Event Near London This Summer! (2015)</a>
       </li>
     
@@ -609,10 +675,6 @@ hack together something on my own.</p>
     
       <li class="post">
         <a href="/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/">DevOps, Systems Administration, and the Culture of Fear</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/12/linux-distribution-for-recomputable-experiments/">Linux Distribution for Recomputable Experiments</a>
       </li>
     
   </ul>
