@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Multi-Environment Deployments with Ansible"
+title: "Ansible Multi-OS Playbooks"
 date: 2015-06-09 13:26:28 +0100
 comments: true
 categories: 
@@ -8,16 +8,20 @@ categories:
   - devops
 ---
 
+{% raw %}
+
 Lately I've been tinkering with some of my Ansible roles to improve the support
 for multiple-environment deployments. Previously, I'd been using a somewhat
 naive approach of simply including environment-specific task lists using
 conditionals in tasks/main.yml like so:
 
-    - include: ubuntu-install.yml
-      when: ansible_distribution == "Ubuntu"
+``` yaml
+- include: ubuntu-install.yml
+  when: ansible_distribution == "Ubuntu"
 
-    - include: centos-install.yml
-      when: ansible_distribution == "CentOS"
+- include: centos-install.yml
+  when: ansible_distribution == "CentOS"
+```
 
 However there are a number of problems with this approach: 1) it requires
 keeping and maintaining separate task lists for each environment, 2)
@@ -34,21 +38,25 @@ allows for parallel deployment, and reduces the size of the output.
 Environment-specific variables can be loaded by using "include_vars" and
 "with_first_found" as in the following preamble:
 
-    - name: gather os specific variables
-      include_vars: "{{ item }}"
-      with_first_found:
-        - files:
-            - "{{ ansible_distribution|lower }}-{{
-                  ansible_distribution_version }}.yml"
-            - "{{ ansible_distribution|lower }}-{{
-                  ansible_distribution_release }}.yml"
-            - "{{ ansible_distribution|lower }}-{{
-                  ansible_distribution_major_version }}.yml"
-            - "{{ ansible_distribution|lower }}.yml"
-            - "{{ ansible_os_family|lower }}.yml"
-            - defaults.yml
-          paths:
-            - ../vars
+
+``` yaml
+- include: ubuntu-install.yml
+- name: gather os specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "{{ ansible_distribution|lower }}-{{
+              ansible_distribution_version }}.yml"
+        - "{{ ansible_distribution|lower }}-{{
+              ansible_distribution_release }}.yml"
+        - "{{ ansible_distribution|lower }}-{{
+              ansible_distribution_major_version }}.yml"
+        - "{{ ansible_distribution|lower }}.yml"
+        - "{{ ansible_os_family|lower }}.yml"
+        - defaults.yml
+      paths:
+        - ../vars
+```
 
 Note that this allows for graceful fallback to support different environments
 in the same category; For an Ubuntu Trusty system, Ansible would look in the
@@ -72,11 +80,13 @@ to come up with a solution. For example, rather than "install apt packages" and
 "install rpms", a generic "install packages" step that could be run in parallel
 on different environments might look like this:
 
-    - name: ensure required packages are installed
-      action: "{{ package_info.pkg_mgr }}"
-      args: package_info.args
-      with_items: package_info.pkgs
-      when: package_info.pkgs|length > 0
+``` yaml
+- name: ensure required packages are installed
+  action: "{{ package_info.pkg_mgr }}"
+  args: package_info.args
+  with_items: package_info.pkgs
+  when: package_info.pkgs|length > 0
+```
 
 The "when" keyword above is critical for steps where some environments may need
 to install a set of packages, but others won't. For several of my roles there
@@ -98,3 +108,5 @@ request I wouldn't complain), while the ansible-role-nova-compute role supports
 Ubuntu trusty and CentOS 6.5 (due to a requirement at work). If anyone has any
 criticisms or suggestions for a better way of doing things, then please feel
 free to email me or comment below.
+
+{% endraw %}
