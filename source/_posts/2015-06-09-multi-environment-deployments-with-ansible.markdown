@@ -98,7 +98,7 @@ a "package_info.post_pkgs" as well.
 I could include more details, but if you've gotten this far then you may as well 
 take a look at some of the multi-environment roles that I have on github:
 
-- [ansible-role-mysql](https://github.com/marklee77/ansible-role-mysql)
+- [ansible-role-docker](https://github.com/marklee77/ansible-role-docker)
 - [ansible-role-keystone](https://github.com/marklee77/ansible-role-keystone)
 - [ansible-role-nova-compute](https://github.com/marklee77/ansible-role-nova-compute)
 
