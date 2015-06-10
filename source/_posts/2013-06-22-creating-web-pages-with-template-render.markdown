@@ -4,6 +4,9 @@ title: "Creating Web Pages with Template Render"
 date: 2013-06-22 18:41
 comments: true
 categories: 
+  - python
+  - projects
+  - mako
 ---
 
 I'm very fond of static website generators--they're a lot faster than

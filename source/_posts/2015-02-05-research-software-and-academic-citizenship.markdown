@@ -4,6 +4,7 @@ title: "Research Software and Academic Citizenship"
 date: 2015-02-05 16:44:11 +0000
 comments: true
 categories: 
+  - researchpolitics
 ---
 
 The authors of a recent article featured in *Times Higher Education*, "[Is 'academic citizenship' under strain?](http://www.timeshighereducation.co.uk/features/is-academic-citizenship-under-strain/2018134.article)", argue persuasively that changes in policy and the funding environment are

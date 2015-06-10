@@ -4,6 +4,9 @@ title: "DevOps, Systems Administration, and the Culture of Fear"
 date: 2014-09-29 13:09:28 +0100
 comments: true
 categories: 
+  - devops
+  - ansible
+  - harness
 ---
 
 Today at the [HARNESS project](http://www.harness-project.eu) integration team

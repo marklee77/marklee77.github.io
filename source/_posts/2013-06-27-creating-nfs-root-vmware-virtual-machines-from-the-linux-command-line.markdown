@@ -4,6 +4,10 @@ title: "Creating NFS-root VMWare Virtual Machines from the Linux Command Line"
 date: 2013-06-27 20:24
 comments: true
 categories: 
+  - virtualmachines
+  - vmware
+  - linux
+  - nfsroot
 ---
 
 In our department there's a course that includes lab sections on programming

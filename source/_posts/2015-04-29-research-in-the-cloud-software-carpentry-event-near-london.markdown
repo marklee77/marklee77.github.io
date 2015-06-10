@@ -4,10 +4,10 @@ title: "'Research in the Cloud' Software Carpentry Event near London this Summer
 date: 2015-04-29 11:19:35 +0100
 comments: true
 categories:
-    - harness
-    - cloud
-    - softwarecarpentry
-    - events
+  - harness
+  - cloud
+  - softwarecarpentry
+  - events
 ---
 
 I'm very excited to announce that for the past month I have been working on the

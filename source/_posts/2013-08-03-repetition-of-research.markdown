@@ -4,6 +4,8 @@ title: "Repetition of Research (Unintended)"
 date: 2013-08-03 16:32:50 +0100
 comments: true
 categories: 
+  - researchphilosophy
+  - semanticweb
 ---
 Most of us are familiar with the classical narrative of ongoing scientific
 progress: that each new discovery builds upon previous ones, creating an ever

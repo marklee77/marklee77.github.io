@@ -4,6 +4,11 @@ title: "Linux Distribution for Recomputable Experiments"
 date: 2013-09-12 12:00:00 
 comments: true 
 categories: 
+  - linux
+  - recomputation
+  - reproducibility
+  - researchsoftware
+  - semanticweb
 --- 
 I had a great time yesterday at the 
 <a href="http://www.software.ac.uk/workshop-research-software-engineers">Workshop for Research Software Engineers</a> 

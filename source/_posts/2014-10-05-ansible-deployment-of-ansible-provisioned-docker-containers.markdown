@@ -4,6 +4,9 @@ title: "Ansible deployment of Ansible-provisioned Docker containers"
 date: 2014-10-05 20:58:26 +0100
 comments: true
 categories: 
+  - devops
+  - ansible
+  - docker
 ---
 
 I've been working with [Ansible](http://ansible.com) quite a lot for the past
