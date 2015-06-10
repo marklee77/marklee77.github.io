@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Researchpolitics | e-Enquiry]]></title>
+  <link href="http://blog.stillwell.me/blog/categories/researchpolitics/atom.xml" rel="self"/>
+  <link href="http://blog.stillwell.me/"/>
+  <updated>2015-06-10T22:04:46+01:00</updated>
+  <id>http://blog.stillwell.me/</id>
+  <author>
+    <name><![CDATA[Mark Stillwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Research Software and Academic Citizenship]]></title>
+    <link href="http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/"/>
+    <updated>2015-02-05T16:44:11+00:00</updated>
+    <id>http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship</id>
+    <content type="html"><![CDATA[<p>The authors of a recent article featured in <em>Times Higher Education</em>, &ldquo;<a href="http://www.timeshighereducation.co.uk/features/is-academic-citizenship-under-strain/2018134.article">Is &lsquo;academic citizenship&rsquo; under strain?</a>&rdquo;, argue persuasively that changes in policy and the funding environment are
+pushing academics to focus more and more on the primary tasks of teaching and
+research, at the expense of a large class of less widely known activities that
+are nonetheless essential to the academic enterprise. The points they make will
+resonate with any academic who has tried to find the time to make significant
+real-world contributions in today&rsquo;s metric-focused environment. However,
+despite its aspirations, the article is not truly comprehensive: One critical
+area of activity neglected in the piece is that of developing and maintaining
+the software and infrastructures that enable modern computing-based research.</p>
+
+<p><a href="http://www.rse.ac.uk/">UKRSE</a></p>
+
+<p><a href="http://software.ac.uk">Software Sustainability Institute</a></p>
+]]></content>
+  </entry>
+  
+</feed>

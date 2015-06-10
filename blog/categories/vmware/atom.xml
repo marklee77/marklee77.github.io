@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vmware | e-Enquiry]]></title>
+  <link href="http://blog.stillwell.me/blog/categories/vmware/atom.xml" rel="self"/>
+  <link href="http://blog.stillwell.me/"/>
+  <updated>2015-06-10T22:04:46+01:00</updated>
+  <id>http://blog.stillwell.me/</id>
+  <author>
+    <name><![CDATA[Mark Stillwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Creating NFS-root VMWare Virtual Machines From the Linux Command Line]]></title>
+    <link href="http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/"/>
+    <updated>2013-06-27T20:24:00+01:00</updated>
+    <id>http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line</id>
+    <content type="html"><![CDATA[<p>In our department there&rsquo;s a course that includes lab sections on programming
+fluid dynamics simulations in <a href="http://openfoam.com" title="OpenFOAM: The open source CFD toolbox">OpenFOAM</a>, which isn&rsquo;t supported by the
+University&rsquo;s IT services. We&rsquo;ve traditionally gotten around this by installing
+the required environment in a virtual machine image and running it with
+<a href="http://www.vmware.com" title="VMware">VMWare</a> under MS Windows, but there are infrastructural headaches associated
+with this approach: the image is several gigabytes in size, and so distributing
+to all of the machines and importing it into VMWare manually on a large number
+of machines is time consuming and tedious. The research fellow who runs these
+lab sections asked me to help him come up with a solution to this problem, so my
+suggestion was to create some minimal virtual machine images that users could
+download and import into VMware quickly, and have the root file system shared
+out from a server over NFS. I&rsquo;ve decided to document the process of creating
+these images here, on the off chance it might turn out to be useful to someone
+else. The commands documented below were run on an <a href="http://ubuntu.com" title="Ubuntu Linux">Ubuntu</a> 12.10 system.</p>
+
+<!--more-->
+
+
+<h2>Step 0: Configuring an NFS-root server, and getting appropriate kernel and</h2>
+
+<p>initrd files to install in the VM image.</p>
+
+<p>This part is somewhat beyond the scope of this tutorial. On a working NFS server
+you can use debootstrap to install a system image to a directory that will be
+accessible from clients, preferably with read-only access.</p>
+
+<p>Some mostly Ubuntu/Debian specific notes:</p>
+
+<ol>
+<li><p>Don&rsquo;t forget to edit etc/network/interfaces in the directory that will be
+shared out to the clients if you need to use DHCP to get a DNS server or
+want to have any ability to interact with the interface from the VM. While
+the networking will be pre-setup by the kernel at boot time, none of the
+information will be made available to the operating system without
+re-querying the DHCP server.</p></li>
+<li><p>The best way to get a compatible kernel for the clients is to chroot into
+the root of the filesystem that you want to share, and then use apt-get to
+install the kernel there.</p>
+
+<pre><code>$ mount -t bind /dev /path/to/client/root/dev         
+$ mount -t bind /proc /path/to/client/root/proc
+$ mount -t bind /sys /path/to/client/root/sys
+$ chroot /path/to/client/root /bin/bash
+</code></pre></li>
+<li><p>It can be difficult to configure the clients to properly deal with read-only
+nfs-mounted root filesystems. One easy way to deal with the
+problem is to use the excellent <a href="/files/root-ro">root-ro</a> script. Within the chroot:</p>
+
+<pre><code> $ cp root-ro /etc/initramfs-tools/scripts/init-bottom/
+</code></pre>
+
+<p> Again, you want this in the configuration directory that will be used by the
+ clients, or, more to the point, update-initramfs. When you create the
+ initrd.img by running the update-initramfs command the script will be copied
+ in and run automatically at boot time, before the root filesystem is made
+ available to user-level programs. What it does is quite clever: it moves the
+ NFS-root mount point from / to /mnt/root-ro, creates a temporary (in memory)
+ filesystem at /mnt/root-rw, and then uses overlayfs or aufs to provide the
+ root. The effect is of having a fully read-write enabled root filesystem,
+ but with all of the writes going to the tmpfs. SIDE NOTE: I prefer aufs as
+ it provides the most &ldquo;natural&rdquo; experience, but aufs is apparently on the way
+ out, to be replaced by overlayfs. One problem with this is that the mount
+ options for overlayfs don&rsquo;t allow you to specify that the &ldquo;lower&rdquo; mount is
+ read-only. This results in the odd behavior that if a file already exists on
+ the lower file system, the file can&rsquo;t be edited. The work-around is to copy
+ the file to a new location, &ldquo;delete&rdquo; it (the lower filesystem is
+ unaffected), and then move the copy back to the old location.</p>
+
+<p> Example:</p>
+
+<pre><code> $ cp /etc/passwd /etc/passwd.new
+ $ rm /etc/passwd
+ $ mv /etc/passwd.new /etc/passwd
+</code></pre>
+
+<p> This way when you try to edit the file, overlayfs will know that you are
+ only trying to edit the local copy.</p></li>
+<li><p>Next, edit /etc/initramfs-tools/initramfs.conf <em>within the chroot</em>. Repeat,
+this is to make changes to the initramfs.conf file for the <em>client</em>, and you
+really don&rsquo;t want to make these changes on the server. Change &ldquo;MODULES=most&rdquo;
+to &ldquo;MODULES=netboot&rdquo; and &ldquo;BOOT=local&rdquo; to &ldquo;BOOT=nfs&rdquo;. You may also want to
+change &ldquo;NFSROOT=auto&rdquo; to a hard-coded value, depending on your setup.</p>
+
+<pre><code>$ update-initramfs -k all -c
+</code></pre>
+
+<p>This will cause the needed vmlinuz and initrd.img files to be generated
+under /boot; they may have version information appended to the file names.</p></li>
+</ol>
+
+
+<h2>Step 1: Creating the Disk Image</h2>
+
+<p>The first step in the procedure is to create a properly formatted file that will
+serve as the virtual disk. I used the standard utilities <em>dd</em>, <em>parted</em>, and
+<em>fdisk</em> to create the file, and installed the <a href="http://syslinux.org" title="The Syslinux Project">syslinux</a> bootloader to the
+virtual disk&rsquo;s MBR.</p>
+
+<p>create the empty file:</p>
+
+<pre><code>dd if=/dev/zero of=disk.img bs=1 count=0 seek=1G
+</code></pre>
+
+<p>add the partition table:</p>
+
+<pre><code>parted -s disk.img mklabel msdos
+</code></pre>
+
+<p>create the boot partition:</p>
+
+<pre><code>parted -s --align=none disk.img mkpart primary 0 256M
+</code></pre>
+
+<p>make it bootable:</p>
+
+<pre><code>echo -e "a\n1\nw\nq" | fdisk disk.img
+</code></pre>
+
+<p>add syslinux mbr (syslinux is the boot loader used to boot the kernel):</p>
+
+<pre><code>dd bs=440 conv=notrunc count=1 if=/usr/lib/syslinux/mbr.bin of=disk.img
+</code></pre>
+
+<p>create home partition:</p>
+
+<pre><code>parted -s --align=none disk.img mkpart primary 256M+1 100%
+</code></pre>
+
+<h2>Step 2: Create Filesystems and Install Files</h2>
+
+<p>For this step it&rsquo;s important to have the kernel and initrd files you plan on
+using in one directory, called &ldquo;boot&rdquo; in this example, and a skeleton user home
+directory, called &ldquo;vmuser&rdquo; in this case. You also need to create a fairly basic
+syslinux.cfg file to put in the boot directory:</p>
+
+<pre><code>PROMPT 0
+TIMEOUT 50
+DEFAULT arch
+
+LABEL client
+LINUX ./vmlinuz-linux
+APPEND root=/dev/nfs nfsroot=&lt;server-ip&gt;:&lt;nfs-path&gt; ip=::::::dhcp
+INITRD ./initramfs-linux.img
+</code></pre>
+
+<p>attach loopback device to the disk:</p>
+
+<pre><code>sudo losetup /dev/loop0 disk.img
+</code></pre>
+
+<p>add partitions to /dev:</p>
+
+<pre><code>sudo kpartx -a /dev/loop0
+</code></pre>
+
+<p>create filesystems:</p>
+
+<pre><code>sudo mkfs -t ext4 /dev/mapper/loop0p1
+sudo mkfs -t ext4 /dev/mapper/loop0p2
+</code></pre>
+
+<p>mount filesystems:</p>
+
+<pre><code>sudo mkdir /mnt/vmboot
+sudo mount /dev/mapper/loop0p1 /mnt/vmboot
+sudo mkdir /mnt/vmhome
+sudo mount /dev/mapper/loop0p2 /mnt/vmhome
+</code></pre>
+
+<p>install syslinux in boot directory:</p>
+
+<pre><code>sudo extlinux --install /mnt/vmboot
+</code></pre>
+
+<p>install kernel and config:</p>
+
+<pre><code>sudo cp boot/* /mnt/vmboot
+</code></pre>
+
+<p>install home:</p>
+
+<pre><code>sudo cp -r vmuser /mnt/vmhome/
+</code></pre>
+
+<p>set uid/gid:</p>
+
+<pre><code>sudo chown -R 1000:100 /mnt/vmhome/vmuser
+</code></pre>
+
+<p>clean up after yourself:</p>
+
+<pre><code>sudo umount /mnt/vmboot
+sudo rmdir /mnt/vmboot
+
+sudo umount /mnt/vmhome
+sudo rmdir /mnt/vmhome
+
+sudo kpartx -d /dev/loop0
+
+sudo losetup -d /dev/loop0
+</code></pre>
+
+<p>The disk.img file is now suitable for booting! In the next section we&rsquo;ll tackle
+how to create an ovf file for use with vmware.</p>
+
+<h2>Step 3: Convert the Image to work with VMWare</h2>
+
+<p>For this part I first went to easyvmx.com to create a basic virtual machine
+image, and then replaced the provided root disk with my own. Since that site
+seems to be down these days, I&rsquo;m linking to a copy the one I use <a href="/files/OpenFoam_Client.tar.bz2" title="OpenFOAM NFS-root Client VMX">here</a>.
+I use the kvm-img utility to convert the disk.img to a format that is compatible
+with VMware and then use <a href="http://communities.vmware.com/community/vmtn/automationtools/ovf" title="OVF Tool">ovftool</a> to bundle the vmx into a compressed ova
+archive. The ovftool utility is available as a download from VMware.</p>
+
+<p>convert to vmdk:</p>
+
+<pre><code>kvm-img convert -O vmdk disk.img disk.vmdk
+</code></pre>
+
+<p>add to vmx:</p>
+
+<pre><code>mv disk.vmdk OpenFoam_Client/OpenFoam_Client.vmdk
+</code></pre>
+
+<p>convert to ovf:</p>
+
+<pre><code>ovftool --compress OpenFoam_Client/OpenFoam_Client.vmx boot.ova
+</code></pre>
+
+<p>And that&rsquo;s it! If you think this is useful, or you tried to follow my
+instructions and had problems, please comment on this post.</p>
+]]></content>
+  </entry>
+  
+</feed>
