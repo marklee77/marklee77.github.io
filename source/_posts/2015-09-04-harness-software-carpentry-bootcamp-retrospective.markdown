@@ -8,6 +8,8 @@ categories:
 
 ## Background
 
+![Alex Wolf Keynote](/images/20150715_143559.jpg)
+
 In July 2015, the HARNESS project hosted a Software Carpentry bootcamp at the
 SAP headquarters in Feltham, near London Heathrow. In addition to the standard
 topics on the bash command line, git for version control, and programming in
@@ -28,6 +30,8 @@ follows:
 There was also a keynote on the topic of Heterogeneous Accelerators in the
 Cloud given by Professor Alexander Wolf (HARNESS, ICL), and a demonstration of
 the HARNESS cloud platform given by Gabriel Coutinho (HARNESS, ICL).
+
+<!--more-->
 
 ## Response
 
