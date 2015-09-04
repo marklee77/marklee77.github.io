@@ -94,5 +94,5 @@ location, so we will take this problem into account when planning similar
 events in the future. There were no major technical glitches that ruined an
 entire lesson, but there were some delays caused by improperly configured
 software, and one of the cloud services did not respond well to the load it was
-given, thus demonstrating the needs to allocate sufficient time for debugging
+given, thus demonstrating the need to allocate sufficient time for debugging
 and thoroughly test in advance.
