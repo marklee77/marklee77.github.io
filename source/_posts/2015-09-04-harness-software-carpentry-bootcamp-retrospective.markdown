@@ -67,12 +67,12 @@ which was a higher response rate than expected. Interestingly, 4 people who
 attended the event did not respond to the survey, and similarly, 4 people who
 responded to the survey did not attend the event. Most of the survey
 respondents were researchers associated with universities in England, though
-one was from Belfast and another from Italyi, and three others remain of
+one was from Belfast and another from Italy, and three others remain of
 indeterminate origin. There were 8 responses from females and 17 from males,
 and, with only a few exceptions, those who responded appeared to be at
 a relatively early career stage.
 
-Of the 25 people who attended the bootcamp, 10 responded to the post-event
+Of the 25 people who attended the boot camp, 10 responded to the post-event
 survey, and all of these had previously responded to the pre-event survey.
 There was some variation in the satisfaction with individual lessons, but none
 stood out as being particularly unsatisfying to the students. The overall level
