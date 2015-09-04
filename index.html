@@ -9,8 +9,8 @@
   <meta name="author" content="Mark Stillwell">
 
   
-  <meta name="description" content="Lately I&rsquo;ve been tinkering with some of my Ansible roles to improve the support
-for multiple-environment deployments. Previously, I&rsquo;d &hellip;">
+  <meta name="description" content="Background In July 2015, the HARNESS project hosted a Software Carpentry bootcamp at the
+SAP headquarters in Feltham, near London Heathrow. In &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,69 @@ for multiple-environment deployments. Previously, I&rsquo;d &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/">HARNESS Software Carpentry Bootcamp Retrospective</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-04T14:34:00+01:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:34 pm</span></time>
+        
+           | <a href="/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/#disqus_thread"
+             data-disqus-identifier="http://blog.stillwell.me/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Background</h2>
+
+<p><img src="/images/20150715_143559.jpg" alt="Alex Wolf Keynote" /></p>
+
+<p>In July 2015, the HARNESS project hosted a Software Carpentry bootcamp at the
+SAP headquarters in Feltham, near London Heathrow. In addition to the standard
+topics on the bash command line, git for version control, and programming in
+python, there were additional modules on cloud computing, FPGA data-flow
+engines, and distributed file systems. Representatives from both the Software
+Sustainability Institute and the European Grid Infrastructure attended to
+provide additional teaching support. The full list of topics covered was as
+follows:</p>
+
+<ul>
+<li>Automating Tasks with the Unix Shell (Alistair Grant, SSI)</li>
+<li>Version Control with Git (Alistair Grant, SSI)</li>
+<li>Managing Cloud Services with ConPaaS (Guillaume Pierre, HARNESS, UR1)</li>
+<li>Building Programs with Python (Mark Stillwell, HARNESS, ICL)</li>
+<li>Dataflow Programming with Maxeler (Peter Sanders, HARNESS, Maxeler)</li>
+<li>EGI Federated Cloud for Open Science (Diego Scardaci and Gergely Sipos, EGI)</li>
+<li>Distributed Filesystems with XtreemFS (Christoph Kleinweber, HARNESS, ZIB)</li>
+</ul>
+
+
+<p>There was also a keynote on the topic of Heterogeneous Accelerators in the
+Cloud given by Professor Alexander Wolf (HARNESS, ICL), and a demonstration of
+the HARNESS cloud platform given by Gabriel Coutinho (HARNESS, ICL).</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -583,69 +646,9 @@ else. The commands documented below were run on an <a href="http://ubuntu.com" t
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/22/creating-web-pages-with-template-render/">Creating Web Pages With Template Render</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-22T18:41:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:41 pm</span></time>
-        
-           | <a href="/blog/2013/06/22/creating-web-pages-with-template-render/#disqus_thread"
-             data-disqus-identifier="http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m very fond of static website generators&ndash;they&rsquo;re a lot faster than
-interpreted (php, ruby) or even most compiled (Java) based solutions. I&rsquo;m using
-<a href="http://octopress.org/" title="Octopress: A blogging framework for hackers">Octopress</a> to manage this blog currently, it&rsquo;s basically a set of
-customizations, style files, and build scripts that extend the capabilities of
-<a href="http://jeckyllrb.com/" title="Jeckyll">Jeckyll</a>, a comprehensive platform in its own right. I&rsquo;ve also tried out the
-node.js based <a href="http://docpad.org/" title="Docpad">Docpad</a> and the pythonic <a href="http://hyde.github.com/" title="Hyde: A static website generator">Hyde</a> and <a href="http://blog.getpelican.com/" title="Pelican Development Blog">Pelican</a>.</p>
-
-<p>While these all do a fairly good job of managing a standard blogging sites, in
-my opinion they all suffer from trying to do a bit too much, to manage the whole
-job of website creation, which makes it difficult to decouple small, specific
-bits of functionality, like rendering just a few web pages from templates. Also,
-I never really got into the <a href="http://jinja.pocoo.org/" title="Jinja2">Jinja2</a> templating language: I don&rsquo;t like the
-way that it (doesn&rsquo;t) handle inline code, or the fact that every call to a macro
-has to be in the form of a <em>block</em>, or that every macro definition needs to do
-something with the content included in the block, even if you didn&rsquo;t want to use
-that feature. I much prefer the style of <a href="http://www.makotemplates.org/" title="Mako Templates for Python">Mako</a>, but none of the popular
-static website generators seem to support it.</p>
-
-<p>For the Department&rsquo;s digital sign project, I just needed something that would
-rending a single, but fairly complicated, web page in a way that would be easy
-for me to customize, and I didn&rsquo;t want to deal with the overhead of a lot of
-features aimed at things like blogging that I never intended to use. My first
-thought was to hack something together with <em>Make</em> and the mako-render script
-that came packaged with Ubuntu, but whereas the static website generators did
-more than I wanted, this seemed a little too simple. So, naturally, I decided to
-hack together something on my own.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/22/creating-web-pages-with-template-render/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -656,6 +659,10 @@ hack together something on my own.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/">HARNESS Software Carpentry Bootcamp Retrospective</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/06/09/multi-environment-deployments-with-ansible/">Ansible Multi-OS Playbooks</a>
@@ -671,10 +678,6 @@ hack together something on my own.</p>
     
       <li class="post">
         <a href="/blog/2014/10/05/ansible-deployment-of-ansible-provisioned-docker-containers/">Ansible Deployment of Ansible-provisioned Docker Containers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/">DevOps, Systems Administration, and the Culture of Fear</a>
       </li>
     
   </ul>
