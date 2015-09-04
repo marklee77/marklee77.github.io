@@ -4,7 +4,7 @@
   <title><![CDATA[e-Enquiry]]></title>
   <link href="http://blog.stillwell.me/atom.xml" rel="self"/>
   <link href="http://blog.stillwell.me/"/>
-  <updated>2015-09-04T14:52:12+01:00</updated>
+  <updated>2015-09-04T14:55:23+01:00</updated>
   <id>http://blog.stillwell.me/</id>
   <author>
     <name><![CDATA[Mark Stillwell]]></name>
@@ -110,7 +110,7 @@ location, so we will take this problem into account when planning similar
 events in the future. There were no major technical glitches that ruined an
 entire lesson, but there were some delays caused by improperly configured
 software, and one of the cloud services did not respond well to the load it was
-given, thus demonstrating the needs to allocate sufficient time for debugging
+given, thus demonstrating the need to allocate sufficient time for debugging
 and thoroughly test in advance.</p>
 ]]></content>
   </entry>
