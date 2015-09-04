@@ -6,8 +6,6 @@ comments: true
 categories: 
 ---
 
-## Background
-
 ![Alex Wolf Keynote](/images/20150715_143559.jpg)
 
 In July 2015, the HARNESS project hosted a Software Carpentry bootcamp at the
