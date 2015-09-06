@@ -10,20 +10,39 @@ categories:
 
 In July 2015, the HARNESS project hosted a Software Carpentry bootcamp at the
 SAP headquarters in Feltham, near London Heathrow. In addition to the standard
-topics on the bash command line, git for version control, and programming in
-python, there were additional modules on cloud computing, FPGA data-flow
-engines, and distributed file systems. Representatives from both the Software
-Sustainability Institute and the European Grid Infrastructure attended to
-provide additional teaching support. The full list of topics covered was as
-follows:
+topics on task automation, version control, and programming in python, there
+were additional modules on cloud computing, FPGA data-flow engines, and
+distributed file systems. Representatives from both the Software Sustainability
+Institute and the European Grid Infrastructure attended to provide additional
+teaching support. The full list of topics covered was as follows:
 
-- Automating Tasks with the Unix Shell (Alistair Grant, SSI)
-- Version Control with Git (Alistair Grant, SSI)
-- Managing Cloud Services with ConPaaS (Guillaume Pierre, HARNESS, UR1)
-- Building Programs with Python (Mark Stillwell, HARNESS, ICL)
-- Dataflow Programming with Maxeler (Peter Sanders, HARNESS, Maxeler)
-- EGI Federated Cloud for Open Science (Diego Scardaci and Gergely Sipos, EGI)
+- [Automating Tasks with the Unix Shell](https://swcarpentry.github.io/shell-novice/) (Alistair Grant, SSI)
+- [Version Control with Git](https://swcarpentry.github.io/git-novice/) (Alistair Grant, SSI)
+- [Building Programs with Python](https://swcarpentry.github.io/python-novice-inflammation/) (Mark Stillwell, HARNESS, ICL)
+- [Managing Cloud Services with ConPaaS](https://harnesscloud.github.io/2015-07-15-feltham/conpaas/slides.pdf) (Guillaume Pierre, HARNESS, UR1)
+- [Dataflow Programming with Maxeler](https://harnesscloud.github.io/2015-07-15-feltham/maxeler/CodeCarpentry-MaxelerDataflow1.pdf) (Peter Sanders, HARNESS, Maxeler)
+- [EGI Federated Cloud for Open Science](https://documents.egi.eu/document/2551) (Diego Scardaci and Gergely Sipos, EGI)
 - Distributed Filesystems with XtreemFS (Christoph Kleinweber, HARNESS, ZIB)
+
+The first three modules; *Automating Tasks with the Unix Shell*, *Version
+Control with Git*, and *Building Programs with Python*; were drawn from the
+standard Software Carpentry curriculum, while three of the remaining four
+modules were developed specially for this course to showcase HARNESS-related
+technologies. In *Managing Cloud Services with ConPaaS*, Guillaume Pierre from
+UR1 lead the students through using the [ConPaaS](http://conpaas.eu) web
+service interface to deploy a WordPress blog. In *Dataflow Programming with
+Maxeler*, Peter Sanders from Maxeler discussed how FPGA data flow engines
+achieve computational speedup over conventional CPUs despite their lower Mhz
+ratings by allowing users to create deep processing pipelines, and showed
+students how to develop custom FPGA configurations using the Maxeler IDE. In
+*Distributed Filesystems with XtreemFS*, Christoph Kleinweber from ZIB
+explained the differences between networked and distributed filesystems and
+showed students how to build a storage solution using XtreemFS. Finally, in
+*EGI Federated Cloud for Open Science* Diego Scardaci and Gergely Sipos from
+EGI, a separate project with collaborative ties to HARNESS, demonstrated how
+students could access the EGI federated cloud, a multi-site research oriented
+and publicly funded cloud targeted at computational researchers in the European
+Union.
 
 There was also a keynote on the topic of Heterogeneous Accelerators in the
 Cloud given by Professor Alexander Wolf (HARNESS, ICL), and a demonstration of
