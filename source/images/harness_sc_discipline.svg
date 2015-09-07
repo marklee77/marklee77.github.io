@@ -969,7 +969,38 @@ Q54.8906 44.3438 54.8906 33.0156" id="BitstreamVeraSans-Roman-68"/>
     </g>
    </g>
    <g id="text_11">
-    <!-- Support -->
+    <!-- Support / Development -->
+    <defs>
+     <path d="
+M2.98438 54.6875
+L12.5 54.6875
+L29.5938 8.79688
+L46.6875 54.6875
+L56.2031 54.6875
+L35.6875 0
+L23.4844 0
+z
+" id="BitstreamVeraSans-Roman-76"/>
+     <path d="
+M19.6719 64.7969
+L19.6719 8.10938
+L31.5938 8.10938
+Q46.6875 8.10938 53.6875 14.9375
+Q60.6875 21.7812 60.6875 36.5312
+Q60.6875 51.1719 53.6875 57.9844
+Q46.6875 64.7969 31.5938 64.7969
+z
+
+M9.8125 72.9062
+L30.0781 72.9062
+Q51.2656 72.9062 61.1719 64.0938
+Q71.0938 55.2812 71.0938 36.5312
+Q71.0938 17.6719 61.125 8.82812
+Q51.1719 0 30.0781 0
+L9.8125 0
+z
+" id="BitstreamVeraSans-Roman-44"/>
+    </defs>
     <g transform="translate(342.892294823 147.386933673)scale(0.1 -0.1)">
      <use xlink:href="#BitstreamVeraSans-Roman-53"/>
      <use x="63.4765625" xlink:href="#BitstreamVeraSans-Roman-75"/>
@@ -978,6 +1009,20 @@ Q54.8906 44.3438 54.8906 33.0156" id="BitstreamVeraSans-Roman-68"/>
      <use x="253.80859375" xlink:href="#BitstreamVeraSans-Roman-6f"/>
      <use x="314.990234375" xlink:href="#BitstreamVeraSans-Roman-72"/>
      <use x="356.103515625" xlink:href="#BitstreamVeraSans-Roman-74"/>
+     <use x="395.3125" xlink:href="#BitstreamVeraSans-Roman-20"/>
+     <use x="427.099609375" xlink:href="#BitstreamVeraSans-Roman-2f"/>
+     <use x="460.791015625" xlink:href="#BitstreamVeraSans-Roman-20"/>
+     <use x="492.578125" xlink:href="#BitstreamVeraSans-Roman-44"/>
+     <use x="569.580078125" xlink:href="#BitstreamVeraSans-Roman-65"/>
+     <use x="631.103515625" xlink:href="#BitstreamVeraSans-Roman-76"/>
+     <use x="690.283203125" xlink:href="#BitstreamVeraSans-Roman-65"/>
+     <use x="751.806640625" xlink:href="#BitstreamVeraSans-Roman-6c"/>
+     <use x="779.58984375" xlink:href="#BitstreamVeraSans-Roman-6f"/>
+     <use x="840.771484375" xlink:href="#BitstreamVeraSans-Roman-70"/>
+     <use x="904.248046875" xlink:href="#BitstreamVeraSans-Roman-6d"/>
+     <use x="1001.66015625" xlink:href="#BitstreamVeraSans-Roman-65"/>
+     <use x="1063.18359375" xlink:href="#BitstreamVeraSans-Roman-6e"/>
+     <use x="1126.5625" xlink:href="#BitstreamVeraSans-Roman-74"/>
     </g>
    </g>
    <g id="text_12">
