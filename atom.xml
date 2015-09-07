@@ -4,7 +4,7 @@
   <title><![CDATA[e-Enquiry]]></title>
   <link href="http://blog.stillwell.me/atom.xml" rel="self"/>
   <link href="http://blog.stillwell.me/"/>
-  <updated>2015-09-07T16:13:09+01:00</updated>
+  <updated>2015-09-07T16:16:40+01:00</updated>
   <id>http://blog.stillwell.me/</id>
   <author>
     <name><![CDATA[Mark Stillwell]]></name>
@@ -54,6 +54,9 @@ The full list of topics covered was as follows:</p>
 </ul>
 
 
+<!--more-->
+
+
 <p>The first three modules; <em>Automating Tasks with the Unix Shell</em>, <em>Version
 Control with Git</em>, and <em>Building Programs with Python</em>; were drawn from the
 standard Software Carpentry curriculum. These modules cover essential core
@@ -92,9 +95,6 @@ researchers in the European Union.</p>
 <p>There was also a keynote on the topic of Heterogeneous Accelerators in the
 Cloud given by Professor Alexander Wolf (HARNESS, ICL), and a demonstration of
 the HARNESS cloud platform given by Gabriel Coutinho (HARNESS, ICL).</p>
-
-<!--more-->
-
 
 <h2>Response</h2>
 
