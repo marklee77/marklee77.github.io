@@ -4,7 +4,7 @@
   <title><![CDATA[e-Enquiry]]></title>
   <link href="http://blog.stillwell.me/atom.xml" rel="self"/>
   <link href="http://blog.stillwell.me/"/>
-  <updated>2015-09-07T15:53:05+01:00</updated>
+  <updated>2015-09-07T15:53:50+01:00</updated>
   <id>http://blog.stillwell.me/</id>
   <author>
     <name><![CDATA[Mark Stillwell]]></name>
@@ -27,14 +27,14 @@ HARNESS project outcomes to the research community, 2) to bring together
 researchers interested in topics relevant to HARNESS, and 3) provide skills and
 knowledge training as a public service to contribute toward the improvement
 computational science practice within the European Union. This activity was
-particularly targeted at the &ldquo;cloud research&rdquo; and &ldquo;heterogeneous compute
-research&rdquo; communities discussed in the HARNESS deliverable documentation. In
-addition to the standard topics on task automation, version control, and
-programming in python, there were additional modules on cloud computing, FPGA
-data-flow engines, and distributed file systems. Representatives from both the
-Software Sustainability Institute and the European Grid Infrastructure attended
-to provide additional teaching support. The full list of topics covered was as
-follows:</p>
+particularly targeted at the &ldquo;HPC&rdquo;, &ldquo;cloud research&rdquo;, and &ldquo;heterogeneous
+compute research&rdquo; communities discussed in the HARNESS deliverable
+documentation. In addition to the standard topics on task automation, version
+control, and programming in python, there were additional modules on cloud
+computing, FPGA data-flow engines, and distributed file systems.
+Representatives from both the Software Sustainability Institute and the
+European Grid Infrastructure attended to provide additional teaching support.
+The full list of topics covered was as follows:</p>
 
 <ul>
 <li><a href="https://swcarpentry.github.io/shell-novice/">Automating Tasks with the Unix Shell</a>
