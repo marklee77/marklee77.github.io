@@ -15,14 +15,14 @@ HARNESS project outcomes to the research community, 2) to bring together
 researchers interested in topics relevant to HARNESS, and 3) provide skills and
 knowledge training as a public service to contribute toward the improvement
 computational science practice within the European Union. This activity was
-particularly targeted at the ``cloud research'' and ``heterogeneous compute
-research'' communities discussed in the HARNESS deliverable documentation. In
-addition to the standard topics on task automation, version control, and
-programming in python, there were additional modules on cloud computing, FPGA
-data-flow engines, and distributed file systems. Representatives from both the
-Software Sustainability Institute and the European Grid Infrastructure attended
-to provide additional teaching support. The full list of topics covered was as
-follows:
+particularly targeted at the ``HPC'', ``cloud research'', and ``heterogeneous
+compute research'' communities discussed in the HARNESS deliverable
+documentation. In addition to the standard topics on task automation, version
+control, and programming in python, there were additional modules on cloud
+computing, FPGA data-flow engines, and distributed file systems.
+Representatives from both the Software Sustainability Institute and the
+European Grid Infrastructure attended to provide additional teaching support.
+The full list of topics covered was as follows:
 
 - [Automating Tasks with the Unix Shell](https://swcarpentry.github.io/shell-novice/) 
   (Alistair Grant, SSI)
@@ -39,33 +39,46 @@ follows:
 - [Distributed Filesystems with XtreemFS](https://github.com/harnesscloud/2015-07-15-feltham-students/blob/master/xtreemfs/slides.pdf) 
   (Christoph Kleinweber, HARNESS, ZIB)
 
+<!--more-->
+
 The first three modules; *Automating Tasks with the Unix Shell*, *Version
 Control with Git*, and *Building Programs with Python*; were drawn from the
-standard Software Carpentry curriculum, while three of the remaining four
-modules were developed specially for this course to showcase HARNESS-related
-technologies. In *Managing Cloud Services with ConPaaS*, Guillaume Pierre from
-UR1 lead the attendees through using the [ConPaaS](http://conpaas.eu) web
-service interface to deploy a WordPress blog. In *Dataflow Programming with
-Maxeler*, Peter Sanders from Maxeler discussed how FPGA data flow engines
-achieve computational speedup over conventional CPUs despite their lower Mhz
-ratings by allowing users to create deep processing pipelines, and showed
-attendees how to develop custom FPGA configurations using the Maxeler IDE.
-Attendees were even given access to a virtual machine running a DFE similar so
-they could follow along with the programming exercises on their own laptops. In
-*Distributed Filesystems with XtreemFS*, Christoph Kleinweber from ZIB
-explained the differences between networked and distributed filesystems and
-showed attendees how to build a storage solution using
-[XtreemFS](http://xtreemfs.org). Finally, in *EGI Federated Cloud for Open
-Science* Diego Scardaci and Gergely Sipos from EGI, a separate project with
-collaborative ties to HARNESS, demonstrated how attendees could access the EGI
-federated cloud, a multi-site research oriented and publicly funded cloud
-targeted at computational researchers in the European Union.
+standard Software Carpentry curriculum. These modules cover essential core
+skills for computational science and so contributed directy to the third
+objective of providing skills and knowledge training as described above, and
+the inclusion of these modules is required for a workshop to be branded as
+a Software Carpentry bootcamp. The Software Carpentry organization publishes
+lessons and guidance on workshop hosting, and has an established reputation for
+quality, and so we believe that the inclusion of these materials was strategic
+for driving outside interest in this activity. As an additional consideration,
+covering these materials made it possible to target a wider pool of users than
+would have been possible otherwise, and to ensure that they would possess the
+essential skills to follow the more advanced HARNESS-specific lessons.
+
+Three of the remaining four modules were developed specially for this course to
+showcase HARNESS-related technologies. In *Managing Cloud Services with
+ConPaaS*, Guillaume Pierre from UR1 lead the attendees through using the
+[ConPaaS](http://conpaas.eu) web service interface to deploy a WordPress blog.
+In *Dataflow Programming with Maxeler*, Peter Sanders from Maxeler discussed
+how FPGA data flow engines achieve computational speedup over conventional CPUs
+despite their lower Mhz ratings by allowing users to create deep processing
+pipelines, and showed attendees how to develop custom FPGA configurations using
+the Maxeler IDE. Attendees were even given access to a virtual machine running
+a DFE similar so they could follow along with the programming exercises on
+their own laptops. In *Distributed Filesystems with XtreemFS*, Christoph
+Kleinweber from ZIB explained the differences between networked and distributed
+filesystems and showed attendees how to build a storage solution using
+[XtreemFS](http://xtreemfs.org).
+
+Finally, in *EGI Federated Cloud for Open Science* Diego Scardaci and Gergely
+Sipos from EGI, a separate project with collaborative ties to HARNESS,
+demonstrated how attendees could access the EGI federated cloud, a multi-site
+research oriented and publicly funded cloud targeted at computational
+researchers in the European Union. 
 
 There was also a keynote on the topic of Heterogeneous Accelerators in the
 Cloud given by Professor Alexander Wolf (HARNESS, ICL), and a demonstration of
 the HARNESS cloud platform given by Gabriel Coutinho (HARNESS, ICL).
-
-<!--more-->
 
 ## Response
 
@@ -134,4 +147,4 @@ events in the future. There were no major technical glitches that ruined an
 entire lesson, but there were some delays caused by improperly configured
 software, and one of the cloud services did not respond well to the load it was
 given, thus demonstrating the need to allocate sufficient time for debugging
-and thoroughly test in advance.
+and thoroughly test everything in advance.
