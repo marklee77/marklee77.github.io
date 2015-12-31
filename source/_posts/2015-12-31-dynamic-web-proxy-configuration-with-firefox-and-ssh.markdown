@@ -4,6 +4,11 @@ title: "Dynamic Web Proxy Configuration with Firefox and SSH"
 date: 2015-12-31 13:30:32 +0000
 comments: true
 categories: 
+  - ssh
+  - socks
+  - proxies
+  - linux
+  - command-fu
 ---
 
 In my day-to-day life I need to access a number of different intranet web
@@ -11,19 +16,21 @@ services. Some of these are on my local work intranet, but I also need to be
 able to get to things like temporary services hosted on Grid'5000. These
 websites are not available on the public Internet so the standard procedure is
 to connect to a gateway that sits at the edge of the intranet and route traffic
-through that gateway through either a VPN or SSH socks proxy. This solution
-isn't ideal, as it requires setting up the connection and possibly
-reconfiguring my browser whenever I want to access a site on one of these
-intranets. I can't access work and Grid'5000 systems at the same time, and,
-when traffic is being routed through Grid'5000, I can't access sites on the
-public Internet (this was a big problem when trying to troubleshoot a web
-application with my teammates by screen sharing over Google talk).
+through that gateway using either a VPN or SSH socks proxy. This solution isn't
+ideal, as it requires setting up the connection and possibly reconfiguring my
+browser whenever I want to access a site on one of these intranets. I can't
+access work and Grid'5000 systems at the same time, and, when traffic is being
+routed through Grid'5000, I can't access sites on the public Internet (this was
+a big problem when trying to troubleshoot a web application with my teammates
+by screen sharing over Google Hangouts).
+
+<!--more-->
 
 So, the first step is to figure out how to appropriately route only the traffic
 that needs to go to an intranet site to the right gateway proxy. The
 preferences dialog in Firefox is fairly limited, but fortunately the browser
-also supports [proxy.pac](http://findproxyforurl.com/) configuration files.
-The proxy.pac standard is intended to support automatic discovery of required
+also supports [proxy.pac](http://findproxyforurl.com/) configuration files. The
+proxy.pac standard is intended to support automatic discovery of required
 proxies for browsers hosted on restrictive intranets, and much of what is
 written about it assumes that the file will be hosted on a remote site and
 accessed via http, but Firefox can also be configured to just read a static
@@ -67,7 +74,7 @@ function FindProxyForURL(url, host) {
 }
 ~~~
 
-So, I have three different SOCKS5 proxies running: tor listening on localhost
+So, I have four different SOCKS5 proxies running: tor listening on localhost
 port 9050, and ssh proxies on ports 9060, 9070, and 9080 that connect
 respectively to Grid'5000, my work intranet, and my personal web server. The
 normal way to set up a SSH proxy is to use a command like this:
