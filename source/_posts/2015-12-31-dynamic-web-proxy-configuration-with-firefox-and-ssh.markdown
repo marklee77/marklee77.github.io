@@ -88,7 +88,7 @@ and keep the proxy working:
     autossh -D 9080 squid.stillwell.me
 
 Personally, I don't like to have the ssh connections up and running unless I'm
-using them, so I came up with a different solution mini-inetd:
+using them, so I came up with a different solution using mini-inetd:
 
     mini-inetd 127.0.0.1:9080 /home/mark/.local/bin/inetd-ssh-proxy inetd-ssh-proxy squid 9081
 
