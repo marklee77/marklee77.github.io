@@ -9,8 +9,8 @@
   <meta name="author" content="Mark Stillwell">
 
   
-  <meta name="description" content="In July 2015, the HARNESS project hosted a Software Carpentry bootcamp/workshop
-at the SAP headquarters in Feltham, near London Heathrow. This was &hellip;">
+  <meta name="description" content="In my day-to-day life I need to access a number of different intranet web
+services. Some of these are on my local work intranet, but I also need to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,54 @@ at the SAP headquarters in Feltham, near London Heathrow. This was &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/">Dynamic Web Proxy Configuration With Firefox and SSH</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-12-31T13:30:32+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>1:30 pm</span></time>
+        
+           | <a href="/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/#disqus_thread"
+             data-disqus-identifier="http://blog.stillwell.me/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In my day-to-day life I need to access a number of different intranet web
+services. Some of these are on my local work intranet, but I also need to be
+able to get to things like temporary services hosted on Grid&#8217;5000. These
+websites are not available on the public Internet so the standard procedure is
+to connect to a gateway that sits at the edge of the intranet and route traffic
+through that gateway using either a VPN or SSH socks proxy. This solution isn&rsquo;t
+ideal, as it requires setting up the connection and possibly reconfiguring my
+browser whenever I want to access a site on one of these intranets. I can&rsquo;t
+access work and Grid&#8217;5000 systems at the same time, and, when traffic is being
+routed through Grid&#8217;5000, I can&rsquo;t access sites on the public Internet (this was
+a big problem when trying to troubleshoot a web application with my teammates
+by screen sharing over Google Hangouts).</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -604,56 +652,6 @@ funding bodies.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Creating NFS-root VMWare Virtual Machines From the Linux Command Line</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-27T20:24:00+01:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>8:24 pm</span></time>
-        
-           | <a href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/#disqus_thread"
-             data-disqus-identifier="http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In our department there&rsquo;s a course that includes lab sections on programming
-fluid dynamics simulations in <a href="http://openfoam.com" title="OpenFOAM: The open source CFD toolbox">OpenFOAM</a>, which isn&rsquo;t supported by the
-University&rsquo;s IT services. We&rsquo;ve traditionally gotten around this by installing
-the required environment in a virtual machine image and running it with
-<a href="http://www.vmware.com" title="VMware">VMWare</a> under MS Windows, but there are infrastructural headaches associated
-with this approach: the image is several gigabytes in size, and so distributing
-to all of the machines and importing it into VMWare manually on a large number
-of machines is time consuming and tedious. The research fellow who runs these
-lab sections asked me to help him come up with a solution to this problem, so my
-suggestion was to create some minimal virtual machine images that users could
-download and import into VMware quickly, and have the root file system shared
-out from a server over NFS. I&rsquo;ve decided to document the process of creating
-these images here, on the off chance it might turn out to be useful to someone
-else. The commands documented below were run on an <a href="http://ubuntu.com" title="Ubuntu Linux">Ubuntu</a> 12.10 system.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -669,6 +667,10 @@ else. The commands documented below were run on an <a href="http://ubuntu.com" t
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/">Dynamic Web Proxy Configuration With Firefox and SSH</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/">HARNESS Software Carpentry Bootcamp Retrospective</a>
       </li>
     
@@ -682,10 +684,6 @@ else. The commands documented below were run on an <a href="http://ubuntu.com" t
     
       <li class="post">
         <a href="/blog/2015/02/05/research-software-and-academic-citizenship/">Research Software and Academic Citizenship</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/05/ansible-deployment-of-ansible-provisioned-docker-containers/">Ansible Deployment of Ansible-provisioned Docker Containers</a>
       </li>
     
   </ul>
