@@ -181,7 +181,7 @@ and keep the proxy working:</p>
 </code></pre>
 
 <p>Personally, I don&rsquo;t like to have the ssh connections up and running unless I&rsquo;m
-using them, so I came up with a different solution mini-inetd:</p>
+using them, so I came up with a different solution using mini-inetd:</p>
 
 <pre><code>mini-inetd 127.0.0.1:9080 /home/mark/.local/bin/inetd-ssh-proxy inetd-ssh-proxy squid 9081
 </code></pre>
@@ -352,7 +352,7 @@ connection is only started when I try to connect to a website that needs it.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Mark Stillwell -
+  Copyright &copy; 2017 - Mark Stillwell -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

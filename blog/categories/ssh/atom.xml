@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ssh | e-Enquiry]]></title>
   <link href="http://blog.stillwell.me/blog/categories/ssh/atom.xml" rel="self"/>
   <link href="http://blog.stillwell.me/"/>
-  <updated>2015-12-31T14:37:37+00:00</updated>
+  <updated>2017-03-13T23:01:13+00:00</updated>
   <id>http://blog.stillwell.me/</id>
   <author>
     <name><![CDATA[Mark Stillwell]]></name>
@@ -97,7 +97,7 @@ and keep the proxy working:</p>
 </code></pre>
 
 <p>Personally, I don&rsquo;t like to have the ssh connections up and running unless I&rsquo;m
-using them, so I came up with a different solution mini-inetd:</p>
+using them, so I came up with a different solution using mini-inetd:</p>
 
 <pre><code>mini-inetd 127.0.0.1:9080 /home/mark/.local/bin/inetd-ssh-proxy inetd-ssh-proxy squid 9081
 </code></pre>

@@ -1,138 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/</loc>
-    
-    <lastmod>2015-12-31T13:30:32+00:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/</loc>
-    
-    <lastmod>2015-09-04T14:34:00+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2015/06/09/multi-environment-deployments-with-ansible/</loc>
-    
-    <lastmod>2015-06-09T13:26:28+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2015/04/29/research-in-the-cloud-software-carpentry-event-near-london/</loc>
-    
-    <lastmod>2015-04-29T11:19:35+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/</loc>
-    
-    <lastmod>2015-02-05T16:44:11+00:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2014/10/05/ansible-deployment-of-ansible-provisioned-docker-containers/</loc>
-    
-    <lastmod>2014-10-05T20:58:26+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/</loc>
-    
-    <lastmod>2014-09-29T13:09:28+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2013/09/12/linux-distribution-for-recomputable-experiments/</loc>
-    
-    <lastmod>2013-09-12T13:00:00+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2013/08/03/repetition-of-research/</loc>
-    
-    <lastmod>2013-08-03T16:32:50+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/</loc>
-    
-    <lastmod>2013-07-15T12:00:00+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/</loc>
-    
-    <lastmod>2013-06-27T20:24:00+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/</loc>
-    
-    <lastmod>2013-06-22T18:41:00+01:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  
-  <url>
-    <loc>http://blog.stillwell.me/blog/archives/</loc>
-    <lastmod>2015-12-31T14:37:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/</loc>
-    <lastmod>2015-12-31T14:37:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/pubs/</loc>
-    <lastmod>2015-12-31T14:37:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.stillwell.me/bio/</loc>
-    <lastmod>2015-12-31T14:37:37+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://blog.stillwell.me/pubs/pubs.html</loc>
-    <lastmod>2015-06-09T15:06:39Z</lastmod>
-    <priority>0.6</priority>
-  </url>
-  
+<url>
+<loc>http://blog.stillwell.me/blog/2015/12/31/dynamic-web-proxy-configuration-with-firefox-and-ssh/</loc>
+<lastmod>2015-12-31T13:30:32+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2015/09/04/harness-software-carpentry-bootcamp-retrospective/</loc>
+<lastmod>2015-09-04T14:34:00+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2015/06/09/multi-environment-deployments-with-ansible/</loc>
+<lastmod>2015-06-09T13:26:28+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2015/04/29/research-in-the-cloud-software-carpentry-event-near-london/</loc>
+<lastmod>2015-04-29T11:19:35+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2015/02/05/research-software-and-academic-citizenship/</loc>
+<lastmod>2015-02-05T16:44:11+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2014/10/05/ansible-deployment-of-ansible-provisioned-docker-containers/</loc>
+<lastmod>2014-10-05T20:58:26+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2014/09/29/a-devops-approach-with-ansible-vagrant-and-docker/</loc>
+<lastmod>2014-09-29T13:09:28+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2013/09/12/linux-distribution-for-recomputable-experiments/</loc>
+<lastmod>2013-09-12T13:00:00+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2013/08/03/repetition-of-research/</loc>
+<lastmod>2013-08-03T16:32:50+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2013/07/15/first-steps-exploring-the-google-cluster-dataset-with-ipython/</loc>
+<lastmod>2013-07-15T12:00:00+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2013/06/27/creating-nfs-root-vmware-virtual-machines-from-the-linux-command-line/</loc>
+<lastmod>2013-06-27T20:24:00+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/2013/06/22/creating-web-pages-with-template-render/</loc>
+<lastmod>2013-06-22T18:41:00+01:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/archives/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/bio/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/python/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/projects/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/mako/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/virtualmachines/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/vmware/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/linux/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/nfsroot/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/ipython/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/googleclusterdata/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/researchphilosophy/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/semanticweb/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/recomputation/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/reproducibility/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/researchsoftware/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/devops/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/ansible/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/harness/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/docker/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/researchpolitics/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/cloud/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/softwarecarpentry/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/events/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/ssh/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/socks/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/proxies/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/blog/categories/command-fu/</loc>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_ccgrid2009.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_inria_rr7772.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_tpds2012.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_ipdpsphd2010.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/bedaride_inria_rr8300.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_inria_rr7659.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/clauss_ipdps2011.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_jpdc2010.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_ipdps2010.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_ipdps2012.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/clauss_inria_rr7426.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_uh_ics2008-09-01.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_qudos2015.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/stillwell_diss2010.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/pubs.html</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/beaumont_inria_rr7761.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/pubs/bedaride_pmbs2013.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
+<url>
+<loc>http://blog.stillwell.me/bio/mark_stillwell_cv.pdf</loc>
+<lastmod>2017-03-13T23:00:10+00:00</lastmod>
+</url>
 </urlset>
